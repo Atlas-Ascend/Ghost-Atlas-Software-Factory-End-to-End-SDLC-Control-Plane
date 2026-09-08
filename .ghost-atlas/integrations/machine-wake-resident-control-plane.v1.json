@@ -1,0 +1,10 @@
+{
+  "schema":"ga.software-factory.machine-wake.v1",
+  "machineWake":"Atlas-Ascend/Ghost-Atlas-Machine-Wake-Resident-Control-Plane",
+  "role":"SOFTWARE_AND_CONFIGURATION_REMEDIATION_PROVIDER_ONLY",
+  "acceptedWork":["repository patch","runtime configuration repair","installer wrapper code around discovered canonical installer","tests and qualification artifacts"],
+  "forbiddenWork":["invent privileged installer","declare physical EDEN controller present without telemetry","declare MACHINE_WAKE=PASS"],
+  "authority":"JANUS_AUTHORIZED_PACKET",
+  "verification":["SECA","DevOS"],
+  "proof":"ProofGrid"
+}
