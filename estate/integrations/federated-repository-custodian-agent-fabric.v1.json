@@ -1,0 +1,11 @@
+{
+  "schema":"ga.farc.integration.v1",
+  "fabric":"Atlas-Ascend/Federated-Autonomous-Repository-Custodian-Agent-Fabric",
+  "campaign":"GA-FARC-AUTONOMOUS-CUSTODIAN-CONVERGENCE-001",
+  "hostRole":"bounded-remediation-software-factory",
+  "accepts":"JANUS-authorized Packet OS repository maintenance packets dispatched by Workforce Spine",
+  "produces":["patch/build artifact","test evidence","candidate verification input"],
+  "providerResolution":"Vishvarupa",
+  "promotion":"SECA/DevOS then ProofGrid; release changes additionally pass Release Deployment Control Plane",
+  "truth":"DECLARED_FACTORY_BINDING_REQUIRES_REAL_CANARY_EXECUTION"
+}
