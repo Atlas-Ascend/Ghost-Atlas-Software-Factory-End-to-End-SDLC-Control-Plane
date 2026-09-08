@@ -1,0 +1,18 @@
+{
+  "name": "ghost-atlas-software-factory",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ghost Atlas end-to-end SDLC control plane and command-to-proof software factory",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "demo": "npm run build && node dist/src/cli.js",
+    "check": "npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  }
+}
