@@ -48,8 +48,66 @@ PROMOTE
 - **Thoth** — historical truth: preserve the immutable lineage and receipts.
 - **Promotion Gate** — make only a fully qualified result canonical.
 
+## Runnable vertical slice
+
+The current v1 executes the entire control-plane sequence in-process while preserving production-grade boundaries through typed contracts and Estate Event lineage. Resident services can later replace stage implementations without changing those contracts.
+
+```bash
+npm install
+npm run check
+npm run demo -- "Build a flashlight application"
+```
+
+The demo returns a run ID, correlation ID, artifact ID, ProofGrid proof ID, Thoth archive ID, promotion state, and the ordered stage trace.
+
+## Repository map
+
+```text
+src/
+├── contracts.ts
+├── factory.ts
+├── cli.ts
+├── lib.ts
+└── organs/
+    ├── control-plane.ts
+    ├── metaforge.ts
+    ├── execution.ts
+    ├── devos.ts
+    ├── prometheus.ts
+    ├── seca.ts
+    ├── medusa.ts
+    ├── proofgrid.ts
+    ├── thoth.ts
+    └── promotion.ts
+
+tests/
+└── factory.test.ts
+
+docs/
+└── ARCHITECTURE.md
+
+build-truth/
+└── SYSTEM_REGISTRY.json
+
+.github/workflows/
+└── ci.yml
+```
+
+## Production extension path
+
+The same contracts are intended to back the production topology already being built across Ghost Atlas:
+
+- Runtime Gateway / Estate Event Gateway
+- Neon run ledger
+- dispatcher / queue workers
+- Render execution workers
+- SSE runtime observability
+- resident EDEN adapters
+- GitHub build/deployment evidence
+- ProofGrid and Thoth persistence
+
 ## Status
 
-`BOOTSTRAP / CANONICAL CHARTER ESTABLISHED`
+`SOFTWARE_FACTORY_V1 = IMPLEMENTED_ON_FEATURE_BRANCH`
 
-Implementation is developed through reviewed branches and promoted only after the factory's own verification gates pass.
+Promotion to `main` requires CI build/test/smoke proof.
