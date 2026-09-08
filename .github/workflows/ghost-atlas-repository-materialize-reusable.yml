@@ -1,0 +1,152 @@
+name: Ghost Atlas Repository Materialization - Reusable
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  bundle-and-deliver:
+    name: Signed repository bundle → EDEN
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout caller repository with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+          persist-credentials: false
+
+      - name: Build canonical Git bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${GITHUB_REF}" = "refs/heads/main"
+          BUNDLE="${RUNNER_TEMP}/repository.bundle"
+          git bundle create "$BUNDLE" --all
+          git bundle verify "$BUNDLE"
+          python - "$BUNDLE" <<'PY'
+          import hashlib, os, pathlib, sys
+          p=pathlib.Path(sys.argv[1])
+          h=hashlib.sha256()
+          with p.open('rb') as f:
+              for block in iter(lambda:f.read(1024*1024), b''):
+                  h.update(block)
+          with open(os.environ['GITHUB_ENV'],'a',encoding='utf-8') as out:
+              out.write(f"GA_BUNDLE={p}\n")
+              out.write(f"GA_BUNDLE_BYTES={p.stat().st_size}\n")
+              out.write(f"GA_BUNDLE_SHA256={h.hexdigest()}\n")
+          print(f"REPOSITORY={os.environ['GITHUB_REPOSITORY']}")
+          print(f"SIGNED_SHA={os.environ['GITHUB_SHA']}")
+          print(f"BUNDLE_BYTES={p.stat().st_size}")
+          print(f"BUNDLE_SHA256={h.hexdigest()}")
+          PY
+
+      - name: Deliver through authenticated estate ingress
+        shell: python
+        env:
+          EDGE_CONTROL_URL: https://raw.githubusercontent.com/Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane/main/estate/runtime/sovereign-materialization-edge.json
+          OIDC_AUDIENCE: ghost-atlas-sovereign-materialization
+          CHUNK_BYTES: '16777216'
+        run: |
+          import hashlib
+          import json
+          import math
+          import os
+          import pathlib
+          import sys
+          import urllib.parse
+          import urllib.request
+
+          def json_request(url, *, method='GET', token=None, body=None, content_type='application/json', timeout=90):
+              headers={'Accept':'application/json','User-Agent':'GhostAtlas-Repository-Materializer/1.0'}
+              if token:
+                  headers['Authorization']='Bearer '+token
+              data=None
+              if body is not None:
+                  if isinstance(body,(dict,list)):
+                      data=json.dumps(body,separators=(',',':')).encode('utf-8')
+                  else:
+                      data=body
+                  headers['Content-Type']=content_type
+              req=urllib.request.Request(url,data=data,headers=headers,method=method)
+              with urllib.request.urlopen(req,timeout=timeout) as response:
+                  raw=response.read()
+                  return json.loads(raw.decode('utf-8')) if raw else {}
+
+          def oidc_token():
+              base=os.environ.get('ACTIONS_ID_TOKEN_REQUEST_URL','')
+              bearer=os.environ.get('ACTIONS_ID_TOKEN_REQUEST_TOKEN','')
+              if not base or not bearer:
+                  raise RuntimeError('GitHub OIDC request environment is unavailable')
+              sep='&' if '?' in base else '?'
+              url=base+sep+urllib.parse.urlencode({'audience':os.environ['OIDC_AUDIENCE']})
+              req=urllib.request.Request(url,headers={'Authorization':'Bearer '+bearer,'Accept':'application/json'},method='GET')
+              with urllib.request.urlopen(req,timeout=30) as response:
+                  payload=json.loads(response.read().decode('utf-8'))
+              token=payload.get('value')
+              if not token:
+                  raise RuntimeError('GitHub OIDC token response contained no value')
+              return token
+
+          control=json_request(os.environ['EDGE_CONTROL_URL'],timeout=30)
+          if control.get('state')!='LIVE_PROVEN' or not control.get('url'):
+              raise RuntimeError('EDEN materialization edge is not LIVE_PROVEN')
+          if control.get('audience')!=os.environ['OIDC_AUDIENCE']:
+              raise RuntimeError('materialization edge audience mismatch')
+          edge=str(control['url']).rstrip('/')
+          bundle=pathlib.Path(os.environ['GA_BUNDLE'])
+          expected_size=int(os.environ['GA_BUNDLE_BYTES'])
+          expected_digest=os.environ['GA_BUNDLE_SHA256']
+          if bundle.stat().st_size!=expected_size:
+              raise RuntimeError('bundle size changed after sealing')
+          chunk_bytes=int(os.environ['CHUNK_BYTES'])
+          chunks=math.ceil(expected_size/chunk_bytes)
+          start=json_request(
+              edge+'/v1/materialize/start',
+              method='POST',
+              token=oidc_token(),
+              body={'sha':os.environ['GITHUB_SHA'].lower(),'size':expected_size,'chunks':chunks,'sha256':expected_digest},
+              timeout=60,
+          )
+          if not start.get('ok') or not start.get('uploadId'):
+              raise RuntimeError('materialization start was not accepted')
+          upload_id=str(start['uploadId'])
+          sent=0
+          with bundle.open('rb') as fh:
+              for index in range(chunks):
+                  block=fh.read(chunk_bytes)
+                  if not block:
+                      raise RuntimeError(f'bundle ended before chunk {index}')
+                  url=edge+'/v1/materialize/chunk?'+urllib.parse.urlencode({'upload':upload_id,'index':index})
+                  ack=json_request(url,method='PUT',token=oidc_token(),body=block,content_type='application/octet-stream',timeout=180)
+                  if not ack.get('ok') or int(ack.get('index',-1))!=index:
+                      raise RuntimeError(f'chunk {index} was not acknowledged')
+                  sent+=len(block)
+                  print(f'CHUNK={index+1}/{chunks} BYTES={len(block)} TOTAL={sent}')
+          if sent!=expected_size:
+              raise RuntimeError('uploaded byte count mismatch')
+          finish_url=edge+'/v1/materialize/finish?'+urllib.parse.urlencode({'upload':upload_id})
+          result=json_request(finish_url,method='POST',token=oidc_token(),body={},timeout=600)
+          if not result.get('ok'):
+              raise RuntimeError('EDEN materialization finish failed')
+          receipt=result.get('receipt') or {}
+          if receipt.get('repository')!=os.environ['GITHUB_REPOSITORY']:
+              raise RuntimeError('receipt repository mismatch')
+          if receipt.get('signedWorkflowSha')!=os.environ['GITHUB_SHA'].lower():
+              raise RuntimeError('receipt SHA mismatch')
+          if receipt.get('result') not in ('PASS','PASS_LOCAL_STATE_PRESERVED'):
+              raise RuntimeError('receipt result rejected: '+str(receipt.get('result')))
+          print(json.dumps({
+              'REPOSITORY_MATERIALIZATION':'PASS',
+              'repository':receipt.get('repository'),
+              'sha':receipt.get('signedWorkflowSha'),
+              'workingCopyState':receipt.get('workingCopyState'),
+              'mirrorState':receipt.get('mirrorState'),
+              'result':receipt.get('result'),
+              'crossRepoMasterToken':receipt.get('crossRepoMasterToken'),
+          },indent=2))
