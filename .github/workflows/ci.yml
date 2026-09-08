@@ -1,0 +1,31 @@
+name: Software Factory CI
+
+on:
+  push:
+    branches: [main, software-factory-v1]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install
+        run: npm install
+
+      - name: Build and test
+        run: npm run check
+
+      - name: Command-to-proof smoke test
+        run: npm run demo -- "CI smoke-test artifact"
