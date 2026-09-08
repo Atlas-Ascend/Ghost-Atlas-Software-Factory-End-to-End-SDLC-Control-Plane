@@ -1,0 +1,39 @@
+{
+  "product": "Ghost Atlas Software Factory",
+  "technicalClass": "End-to-End Software Delivery Control Plane",
+  "repositoryTopology": "Modular Monorepo",
+  "processModel": "Command-to-Proof SDLC",
+  "canonicalSpine": [
+    "ARCHITECT",
+    "ATLAS_MIND",
+    "JANUS",
+    "PACKET_OS",
+    "WORKFORCE_SPINE",
+    "METAFORGE",
+    "EXECUTION_FABRIC",
+    "DEVOS",
+    "PROMETHEUS",
+    "SECA",
+    "MEDUSA",
+    "PROOFGRID",
+    "THOTH",
+    "PROMOTE"
+  ],
+  "truthPipeline": {
+    "DEVOS": "engineering truth",
+    "PROMETHEUS": "evidence truth",
+    "SECA": "acceptance truth",
+    "MEDUSA": "release boundary",
+    "PROOFGRID": "proof publication",
+    "THOTH": "historical truth",
+    "PROMOTE": "canonical state transition"
+  },
+  "invariants": [
+    "No stage may self-promote.",
+    "DevOS does not own acceptance authority.",
+    "Prometheus synthesizes evidence but does not accept releases.",
+    "SECA acceptance and Medusa release allowance are both required for promotion.",
+    "ProofGrid publication and Thoth archive precede canonical promotion.",
+    "Every stage preserves runId and correlationId lineage."
+  ]
+}
