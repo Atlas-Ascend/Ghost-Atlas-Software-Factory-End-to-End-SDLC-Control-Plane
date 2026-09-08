@@ -47,18 +47,16 @@ jobs:
           PY
 
       - name: Deliver through authenticated estate ingress
-        shell: python
+        shell: python {0}
         env:
           EDGE_CONTROL_URL: https://raw.githubusercontent.com/Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane/main/estate/runtime/sovereign-materialization-edge.json
           OIDC_AUDIENCE: ghost-atlas-sovereign-materialization
           CHUNK_BYTES: '16777216'
         run: |
-          import hashlib
           import json
           import math
           import os
           import pathlib
-          import sys
           import urllib.parse
           import urllib.request
 
