@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "GA-SOVEREIGN-MATERIALIZATION-EDGE-CONTROL-1.0",
+  "state": "PENDING_EDEN_EDGE_PROOF",
+  "url": null,
+  "audience": "ghost-atlas-sovereign-materialization",
+  "auth": "GITHUB_ACTIONS_OIDC_RS256",
+  "owner": "Atlas-Ascend",
+  "transport": "CLOUDFLARE_QUICK_TUNNEL",
+  "crossRepoMasterToken": false,
+  "truthBoundary": "A URL is published only after EDEN proves local health, public health, and unauthenticated mutation rejection."
+}
