@@ -1,0 +1,7 @@
+schema: ghost-atlas.hypernet.node/v1
+repository: Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane
+lifecycle: active
+plane: factory
+role: canonical-end-to-end-sdlc-and-metaforge-family-orchestration
+hypernets: [github, software, cloud]
+routing: {authorization: Janus-Prime, io: Crowngrid, discovery: Estate-Service-Catalog-Capability-Registry, transport: Ghost-Atlas-Estate-Service-Mesh-Runtime-Connectivity-Fabric, events: Ghost-Atlas-Estate-Event-Gateway, observability: Ghost-Atlas-Runtime-Observatory, quality: SECA, development_repair: DEVOS}
