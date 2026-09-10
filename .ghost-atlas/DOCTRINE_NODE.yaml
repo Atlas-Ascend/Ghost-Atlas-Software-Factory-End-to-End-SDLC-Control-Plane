@@ -1,0 +1,7 @@
+schema: ghost-atlas.doctrine-node.v1
+status: ACTIVE
+node_type: doctrine_fabric_member
+canonical_doctrine: {repository: Atlas-Ascend/Ghost-Atlas-Map-of-Reality, path: OMNITHEON/doctrine-of-doctrines.v1.json, version: 1.0.0}
+runtime_doctrine_endpoint: https://ghost-atlas-map-of-reality.onrender.com/api/v1/omnitheon/doctrine
+resident_runtime_rule: resolve_higher_order_doctrine_before_consequential_execution
+authority: {self_crowning: DENIED, arbitrary_execution: DENIED, human_agency: SOVEREIGN, empirical_verification: SECA_DEVOS, security_privacy_cultural_boundary: MEDUSA, consequential_authorization: JANUS_ODIN, receipts: PROOFGRID}
