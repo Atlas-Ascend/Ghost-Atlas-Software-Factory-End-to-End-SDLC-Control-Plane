@@ -1,4 +1,4 @@
-import type { CommandIntent, EstateEvent, FactoryRunResult } from './contracts.js';
+import type { CommandIntent, EstateEvent, ExecutionAdapter, FactoryRunResult } from './contracts.js';
 import { id } from './lib.js';
 import { routeCommand } from './organs/control-plane.js';
 import { build } from './organs/metaforge.js';
@@ -11,7 +11,10 @@ import { publish } from './organs/proofgrid.js';
 import { archive } from './organs/thoth.js';
 import { promote } from './organs/promotion.js';
 
-export function runSoftwareFactory(intent: CommandIntent): FactoryRunResult {
+export function runSoftwareFactory(
+  intent: CommandIntent,
+  executionAdapter?: ExecutionAdapter,
+): FactoryRunResult {
   const runId = id('run');
   const correlationId = id('corr');
   const events: EstateEvent[] = [];
@@ -22,7 +25,7 @@ export function runSoftwareFactory(intent: CommandIntent): FactoryRunResult {
   const metaforge = build(runId, correlationId, control.packet);
   events.push(metaforge.event);
 
-  const execution = execute(runId, correlationId, metaforge.artifact);
+  const execution = execute(runId, correlationId, metaforge.artifact, executionAdapter);
   events.push(execution.event);
 
   const devos = verify(runId, correlationId, metaforge.artifact, execution.receipt);
