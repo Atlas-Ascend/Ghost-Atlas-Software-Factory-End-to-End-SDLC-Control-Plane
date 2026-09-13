@@ -45,11 +45,17 @@ export interface WorkPacket {
   objective: string;
   acceptanceCriteria: string[];
   owner: string;
+  buildOrderId: string;
+  sourceOwner: 'METAFORGE';
 }
 
 export interface BuildArtifact {
   artifactId: string;
   packetId: string;
+  buildOrderId: string;
+  sourceOwner: 'METAFORGE';
+  runId: string;
+  correlationId: string;
   kind: 'software-artifact';
   uri: string;
   digest: string;
