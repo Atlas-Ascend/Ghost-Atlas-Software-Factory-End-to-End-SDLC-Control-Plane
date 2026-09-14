@@ -126,6 +126,9 @@ export interface MedusaReleaseDecision {
 export interface ProofGridReceipt {
   proofId: string;
   artifactId: string;
+  buildOrderId: string;
+  sourceOwner: 'METAFORGE';
+  runId: string;
   correlationId: string;
   evidenceChain: string[];
   publishedAt: string;
