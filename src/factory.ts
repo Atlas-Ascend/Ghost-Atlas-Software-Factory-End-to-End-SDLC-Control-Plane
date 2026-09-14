@@ -40,7 +40,7 @@ export function runSoftwareFactory(
   const medusa = review(runId, correlationId, seca.decision);
   events.push(medusa.event);
 
-  const proofgrid = publish(runId, correlationId, prometheus.packet, seca.decision, medusa.decision);
+  const proofgrid = publish(runId, correlationId, metaforge.artifact, prometheus.packet, seca.decision, medusa.decision);
   events.push(proofgrid.event);
 
   const thoth = archive(runId, correlationId, proofgrid.receipt);
