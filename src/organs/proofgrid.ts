@@ -17,6 +17,7 @@ export function publish(
   const receipt: ProofGridReceipt = {
     proofId: id('proof'),
     artifactId: proof.artifactId,
+    packetId: artifact.packetId,
     artifactDigest: artifact.digest,
     buildOrderId: artifact.buildOrderId,
     sourceOwner: artifact.sourceOwner,
