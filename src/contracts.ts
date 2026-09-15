@@ -131,6 +131,8 @@ export interface ProofGridReceipt {
   sourceOwner: 'METAFORGE';
   runId: string;
   correlationId: string;
+  handoffOwner: 'THOTH';
+  handoffRequired: true;
   evidenceChain: string[];
   publishedAt: string;
 }
