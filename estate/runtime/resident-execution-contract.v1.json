@@ -1,0 +1,54 @@
+{
+  "schema": "ghost-atlas.resident-execution-contract/v1",
+  "canonical_owner": "Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+  "authority": {
+    "authorization": "JANUS/ODIN governance contract",
+    "packet_truth": "Packet OS",
+    "task_routing": "Workforce Spine",
+    "build": "MetaForge",
+    "execution": "EDEN / governed execution fabric",
+    "evidence_synthesis": "PROMETHEUS",
+    "engineering_verification": "DevOS",
+    "acceptance": "SECA",
+    "security_release": "Medusa",
+    "proof": "ProofGrid",
+    "archive": "Thoth"
+  },
+  "admissible_execution_evidence": [
+    "resident-observed",
+    "runtime-observed",
+    "external-observed"
+  ],
+  "required_receipt_fields": [
+    "executor",
+    "evidenceClass",
+    "outcome",
+    "exitCode",
+    "artifactDigest",
+    "proofUri",
+    "observedAt"
+  ],
+  "resident_examples": [
+    "EDEN",
+    "ODIN"
+  ],
+  "runtime_examples": [
+    "Render"
+  ],
+  "fallback_order": [
+    "configured canonical executor",
+    "existing authorized resident executor",
+    "existing governed runtime executor",
+    "BLOCKED_EXTERNAL_DEPENDENCY"
+  ],
+  "invariants": [
+    "GitHub-hosted Actions is optional CI redundancy and is never sufficient execution truth by itself.",
+    "No execution adapter means BLOCKED, never SUCCEEDED.",
+    "The observed artifact digest must match the MetaForge artifact digest.",
+    "A proof URI is required for successful execution evidence.",
+    "Credentials must not be serialized into receipts.",
+    "Alternate executors do not change canonical source ownership.",
+    "Observed execution does not bypass DevOS, PROMETHEUS, SECA, Medusa, ProofGrid, or Thoth."
+  ],
+  "promotion_rule": "Promotion is forbidden unless execution.status=SUCCEEDED, evidenceClass is admissible, artifactDigestVerified=true, DevOS/SECA pass, Medusa allows, ProofGrid publishes, and Thoth archives."
+}

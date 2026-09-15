@@ -1,0 +1,35 @@
+{
+  "schema": "ghost-atlas.software-factory-local-proof/v1",
+  "run_id": "GA-CHAT-REVERSE-ENGINEERING-RESIDENT-EXECUTION-20260911",
+  "scope": "chat-derived no-false-green execution contract",
+  "branch": "convergence/chat-derived-resident-execution-sprint31",
+  "github_actions_required": false,
+  "verification": {
+    "typescript_compile": "PASS",
+    "node_test": "PASS",
+    "tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "cases": [
+      "observed resident evidence permits command-to-proof promotion when all downstream gates pass",
+      "missing execution evidence produces BLOCKED and prevents promotion",
+      "artifact digest mismatch produces FAILED and prevents promotion",
+      "failed SECA acceptance prevents promotion"
+    ]
+  },
+  "execution_environment": {
+    "node": "v22.16.0",
+    "typescript": "5.8.3",
+    "method": "source materialized through connected GitHub API and compiled in local execution sandbox",
+    "network_clone": "UNAVAILABLE_IN_SANDBOX",
+    "network_clone_substituted_for_proof": false
+  },
+  "invariants": {
+    "no_execution_adapter_means_success": false,
+    "observed_evidence_required": true,
+    "artifact_digest_binding_required": true,
+    "proof_uri_required_for_success": true,
+    "downstream_gates_preserved": true
+  },
+  "gate": "PASS"
+}
