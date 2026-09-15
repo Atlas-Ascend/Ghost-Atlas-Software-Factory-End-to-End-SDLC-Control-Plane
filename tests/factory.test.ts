@@ -45,6 +45,8 @@ test('full factory promotes only after command-to-proof completes with observed 
   assert.equal(result.proofgrid.sourceOwner, 'METAFORGE');
   assert.equal(result.proofgrid.runId, result.runId);
   assert.equal(result.proofgrid.correlationId, result.correlationId);
+  assert.equal(result.proofgrid.handoffOwner, 'THOTH');
+  assert.equal(result.proofgrid.handoffRequired, true);
 
   const stages = result.events.map((entry) => entry.stage);
   assert.deepEqual(stages, [
