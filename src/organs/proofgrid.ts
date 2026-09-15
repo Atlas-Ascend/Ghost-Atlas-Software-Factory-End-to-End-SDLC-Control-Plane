@@ -22,6 +22,8 @@ export function publish(
     sourceOwner: artifact.sourceOwner,
     runId,
     correlationId,
+    handoffOwner: 'THOTH',
+    handoffRequired: true,
     evidenceChain: [
       ...proof.evidenceIds,
       `seca:${seca.decision}`,
