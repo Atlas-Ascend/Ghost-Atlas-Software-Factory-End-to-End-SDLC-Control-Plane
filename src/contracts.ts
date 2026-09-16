@@ -138,12 +138,17 @@ export interface ProofGridReceipt {
   handoffRequired: true;
   evidenceChain: string[];
   publishedAt: string;
+  receiptDigest: string;
 }
 
 export interface ThothArchiveReceipt {
   archiveId: string;
   artifactId: string;
   proofId: string;
+  packetId: string;
+  runId: string;
+  correlationId: string;
+  proofReceiptDigest: string;
   lineageKey: string;
   archivedAt: string;
 }
