@@ -1,5 +1,5 @@
 import type { BuildArtifact, EstateEvent, ExecutionReceipt, MedusaReleaseDecision, ProofGridReceipt, PrometheusProofPacket, SECAAcceptanceDecision } from '../contracts.js';
-import { event, id, now } from '../lib.js';
+import { digest, event, id, now } from '../lib.js';
 
 export interface ProofGridResult {
   receipt: ProofGridReceipt;
@@ -15,7 +15,7 @@ export function publish(
   seca: SECAAcceptanceDecision,
   medusa: MedusaReleaseDecision,
 ): ProofGridResult {
-  const receipt: ProofGridReceipt = {
+  const receiptBody: Omit<ProofGridReceipt, 'receiptDigest'> = {
     proofId: id('proof'),
     artifactId: proof.artifactId,
     packetId: artifact.packetId,
@@ -34,6 +34,10 @@ export function publish(
       `medusa:${medusa.allowed ? 'ALLOW' : 'BLOCK'}`,
     ],
     publishedAt: now(),
+  };
+  const receipt: ProofGridReceipt = {
+    ...receiptBody,
+    receiptDigest: digest(JSON.stringify(receiptBody)),
   };
 
   return {
