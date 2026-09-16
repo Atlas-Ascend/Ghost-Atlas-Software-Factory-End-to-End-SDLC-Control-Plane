@@ -1,4 +1,4 @@
-import type { BuildArtifact, EstateEvent, MedusaReleaseDecision, ProofGridReceipt, PrometheusProofPacket, SECAAcceptanceDecision } from '../contracts.js';
+import type { BuildArtifact, EstateEvent, ExecutionReceipt, MedusaReleaseDecision, ProofGridReceipt, PrometheusProofPacket, SECAAcceptanceDecision } from '../contracts.js';
 import { event, id, now } from '../lib.js';
 
 export interface ProofGridResult {
@@ -11,6 +11,7 @@ export function publish(
   correlationId: string,
   artifact: BuildArtifact,
   proof: PrometheusProofPacket,
+  execution: ExecutionReceipt,
   seca: SECAAcceptanceDecision,
   medusa: MedusaReleaseDecision,
 ): ProofGridResult {
@@ -23,6 +24,8 @@ export function publish(
     sourceOwner: artifact.sourceOwner,
     runId,
     correlationId,
+    executionId: execution.executionId,
+    executionProofUri: execution.proofUri,
     handoffOwner: 'THOTH',
     handoffRequired: true,
     evidenceChain: [
