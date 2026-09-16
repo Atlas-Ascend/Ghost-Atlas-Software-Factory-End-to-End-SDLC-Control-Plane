@@ -49,6 +49,12 @@ test('full factory promotes only after command-to-proof completes with observed 
   assert.equal(result.proofgrid.executionProofUri, result.execution.proofUri);
   assert.equal(result.proofgrid.handoffOwner, 'THOTH');
   assert.equal(result.proofgrid.handoffRequired, true);
+  assert.equal(result.proofgrid.receiptDigest.length, 64);
+  assert.equal(result.thoth.packetId, result.packet.packetId);
+  assert.equal(result.thoth.runId, result.runId);
+  assert.equal(result.thoth.correlationId, result.correlationId);
+  assert.equal(result.thoth.proofReceiptDigest, result.proofgrid.receiptDigest);
+  assert.equal(result.thoth.lineageKey, `${result.correlationId}:${result.packet.packetId}:${result.proofgrid.proofId}`);
 
   const stages = result.events.map((entry) => entry.stage);
   assert.deepEqual(stages, [
@@ -80,6 +86,7 @@ test('factory blocks promotion when no observed executor receipt exists', () => 
   assert.equal(result.promotion.promoted, false);
   assert.equal(result.proofgrid.executionId, result.execution.executionId);
   assert.equal(result.proofgrid.executionProofUri, null);
+  assert.equal(result.thoth.proofReceiptDigest, result.proofgrid.receiptDigest);
 });
 
 test('factory rejects mismatched resident artifact evidence', () => {
@@ -111,7 +118,11 @@ test('promotion gate blocks a failed SECA decision', () => {
     archiveId: 'archive-test',
     artifactId: 'artifact-test',
     proofId: 'proof-test',
-    lineageKey: 'corr-test:artifact-test',
+    packetId: 'packet-test',
+    runId: 'run-test',
+    correlationId: 'corr-test',
+    proofReceiptDigest: 'a'.repeat(64),
+    lineageKey: 'corr-test:packet-test:proof-test',
     archivedAt: new Date().toISOString(),
   };
 
