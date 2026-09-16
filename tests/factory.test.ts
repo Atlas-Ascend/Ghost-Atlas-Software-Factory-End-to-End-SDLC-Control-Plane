@@ -45,6 +45,8 @@ test('full factory promotes only after command-to-proof completes with observed 
   assert.equal(result.proofgrid.sourceOwner, 'METAFORGE');
   assert.equal(result.proofgrid.runId, result.runId);
   assert.equal(result.proofgrid.correlationId, result.correlationId);
+  assert.equal(result.proofgrid.executionId, result.execution.executionId);
+  assert.equal(result.proofgrid.executionProofUri, result.execution.proofUri);
   assert.equal(result.proofgrid.handoffOwner, 'THOTH');
   assert.equal(result.proofgrid.handoffRequired, true);
 
@@ -76,6 +78,8 @@ test('factory blocks promotion when no observed executor receipt exists', () => 
   assert.equal(result.seca.decision, 'FAIL');
   assert.equal(result.medusa.allowed, false);
   assert.equal(result.promotion.promoted, false);
+  assert.equal(result.proofgrid.executionId, result.execution.executionId);
+  assert.equal(result.proofgrid.executionProofUri, null);
 });
 
 test('factory rejects mismatched resident artifact evidence', () => {
