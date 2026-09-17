@@ -12,6 +12,8 @@ export function archive(runId: string, correlationId: string, proof: ProofGridRe
     artifactId: proof.artifactId,
     proofId: proof.proofId,
     packetId: proof.packetId,
+    buildOrderId: proof.buildOrderId,
+    sourceOwner: proof.sourceOwner,
     runId,
     correlationId,
     proofReceiptDigest: proof.receiptDigest,
