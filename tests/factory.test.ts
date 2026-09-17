@@ -51,6 +51,8 @@ test('full factory promotes only after command-to-proof completes with observed 
   assert.equal(result.proofgrid.handoffRequired, true);
   assert.equal(result.proofgrid.receiptDigest.length, 64);
   assert.equal(result.thoth.packetId, result.packet.packetId);
+  assert.equal(result.thoth.buildOrderId, result.packet.buildOrderId);
+  assert.equal(result.thoth.sourceOwner, 'METAFORGE');
   assert.equal(result.thoth.runId, result.runId);
   assert.equal(result.thoth.correlationId, result.correlationId);
   assert.equal(result.thoth.proofReceiptDigest, result.proofgrid.receiptDigest);
@@ -86,6 +88,8 @@ test('factory blocks promotion when no observed executor receipt exists', () => 
   assert.equal(result.promotion.promoted, false);
   assert.equal(result.proofgrid.executionId, result.execution.executionId);
   assert.equal(result.proofgrid.executionProofUri, null);
+  assert.equal(result.thoth.buildOrderId, result.packet.buildOrderId);
+  assert.equal(result.thoth.sourceOwner, 'METAFORGE');
   assert.equal(result.thoth.proofReceiptDigest, result.proofgrid.receiptDigest);
 });
 
@@ -119,6 +123,8 @@ test('promotion gate blocks a failed SECA decision', () => {
     artifactId: 'artifact-test',
     proofId: 'proof-test',
     packetId: 'packet-test',
+    buildOrderId: 'build-test',
+    sourceOwner: 'METAFORGE' as const,
     runId: 'run-test',
     correlationId: 'corr-test',
     proofReceiptDigest: 'a'.repeat(64),
