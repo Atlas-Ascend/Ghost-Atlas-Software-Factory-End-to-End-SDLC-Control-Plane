@@ -23,6 +23,7 @@ export function routeCommand(runId: string, correlationId: string, intent: Comma
     correlationId,
     objective: intent.command,
     acceptanceCriteria: intent.definitionOfDone,
+    requestedBy: intent.requestedBy,
     owner: 'workforce-spine',
     buildOrderId: id('build'),
     sourceOwner: 'METAFORGE',
@@ -33,6 +34,7 @@ export function routeCommand(runId: string, correlationId: string, intent: Comma
     packetId: packet.packetId,
     buildOrderId: packet.buildOrderId,
     sourceOwner: packet.sourceOwner,
+    requestedBy: packet.requestedBy,
     destination: 'METAFORGE',
   }));
   return { packet, events };
