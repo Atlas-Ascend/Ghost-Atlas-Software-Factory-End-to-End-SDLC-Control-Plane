@@ -23,12 +23,18 @@ export function routeCommand(runId: string, correlationId: string, intent: Comma
     correlationId,
     objective: intent.command,
     acceptanceCriteria: intent.definitionOfDone,
+    requestedBy: intent.requestedBy,
     owner: 'workforce-spine',
+    buildOrderId: id('build'),
+    sourceOwner: 'METAFORGE',
   };
 
   events.push(event(runId, correlationId, 'PACKET_OS', 'packet.created', 'packet-os', packet));
   events.push(event(runId, correlationId, 'WORKFORCE_SPINE', 'packet.dispatched', 'workforce-spine', {
     packetId: packet.packetId,
+    buildOrderId: packet.buildOrderId,
+    sourceOwner: packet.sourceOwner,
+    requestedBy: packet.requestedBy,
     destination: 'METAFORGE',
   }));
   return { packet, events };

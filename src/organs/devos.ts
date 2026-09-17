@@ -7,9 +7,21 @@ export interface DevOSResult {
 }
 
 export function verify(runId: string, correlationId: string, artifact: BuildArtifact, execution: ExecutionReceipt): DevOSResult {
-  const testsPassed = execution.status === 'SUCCEEDED';
+  const observed = execution.evidenceClass !== 'none';
+  const testsPassed = execution.status === 'SUCCEEDED' && observed;
   const buildPassed = artifact.digest.length === 64;
-  const integrationPassed = Boolean(execution.telemetry.artifactDigestPresent);
+  const integrationPassed =
+    observed &&
+    execution.artifactDigestVerified &&
+    Boolean(execution.proofUri) &&
+    Boolean(execution.telemetry.observedExecution);
+
+  const findings: string[] = [
+    testsPassed ? 'observed runtime execution succeeded' : `runtime execution not proven: ${execution.status}`,
+    buildPassed ? 'artifact digest valid' : 'artifact digest invalid',
+    integrationPassed ? 'artifact/runtime integration receipt verified' : 'artifact/runtime integration evidence incomplete',
+  ];
+  if (execution.blocker) findings.push(`execution blocker: ${execution.blocker}`);
 
   const receipt: DevOSVerificationReceipt = {
     artifactId: artifact.artifactId,
@@ -17,11 +29,7 @@ export function verify(runId: string, correlationId: string, artifact: BuildArti
     testsPassed,
     buildPassed,
     integrationPassed,
-    findings: [
-      testsPassed ? 'runtime execution succeeded' : 'runtime execution failed',
-      buildPassed ? 'artifact digest valid' : 'artifact digest invalid',
-      integrationPassed ? 'artifact/runtime integration verified' : 'artifact/runtime integration failed',
-    ],
+    findings,
     verifiedAt: now(),
   };
 

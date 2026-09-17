@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { runSoftwareFactory } from '../src/factory.js';
+import type { ExecutionAdapter } from '../src/contracts.js';
 import { review } from '../src/organs/medusa.js';
 import { promote } from '../src/organs/promotion.js';
 
@@ -10,14 +11,53 @@ const intent = {
   definitionOfDone: ['build', 'execute', 'verify', 'prove', 'accept', 'secure', 'archive'],
 };
 
-test('full factory promotes only after command-to-proof completes', () => {
-  const result = runSoftwareFactory(intent);
+const residentAdapter: ExecutionAdapter = (artifact) => ({
+  executor: 'ODIN',
+  evidenceClass: 'resident-observed',
+  outcome: 'SUCCEEDED',
+  exitCode: 0,
+  artifactDigest: artifact.digest,
+  proofUri: `proof://resident/${artifact.artifactId}`,
+  observedAt: new Date().toISOString(),
+  telemetry: { physicalNode: true },
+});
+
+test('full factory promotes only after command-to-proof completes with observed execution', () => {
+  const result = runSoftwareFactory(intent, residentAdapter);
   assert.equal(result.execution.status, 'SUCCEEDED');
+  assert.equal(result.execution.evidenceClass, 'resident-observed');
+  assert.equal(result.execution.artifactDigestVerified, true);
   assert.equal(result.devos.testsPassed, true);
   assert.equal(result.prometheus.contradictions.length, 0);
   assert.equal(result.seca.decision, 'PASS');
   assert.equal(result.medusa.allowed, true);
   assert.equal(result.promotion.promoted, true);
+
+  assert.equal(result.packet.sourceOwner, 'METAFORGE');
+  assert.equal(result.packet.requestedBy, intent.requestedBy);
+  assert.ok(result.packet.buildOrderId.startsWith('build-'));
+  assert.equal(result.artifact.packetId, result.packet.packetId);
+  assert.equal(result.artifact.buildOrderId, result.packet.buildOrderId);
+  assert.equal(result.artifact.sourceOwner, 'METAFORGE');
+  assert.equal(result.artifact.runId, result.runId);
+  assert.equal(result.artifact.correlationId, result.correlationId);
+  assert.equal(result.proofgrid.artifactDigest, result.artifact.digest);
+  assert.equal(result.proofgrid.buildOrderId, result.packet.buildOrderId);
+  assert.equal(result.proofgrid.sourceOwner, 'METAFORGE');
+  assert.equal(result.proofgrid.runId, result.runId);
+  assert.equal(result.proofgrid.correlationId, result.correlationId);
+  assert.equal(result.proofgrid.executionId, result.execution.executionId);
+  assert.equal(result.proofgrid.executionProofUri, result.execution.proofUri);
+  assert.equal(result.proofgrid.handoffOwner, 'THOTH');
+  assert.equal(result.proofgrid.handoffRequired, true);
+  assert.equal(result.proofgrid.receiptDigest.length, 64);
+  assert.equal(result.thoth.packetId, result.packet.packetId);
+  assert.equal(result.thoth.buildOrderId, result.packet.buildOrderId);
+  assert.equal(result.thoth.sourceOwner, 'METAFORGE');
+  assert.equal(result.thoth.runId, result.runId);
+  assert.equal(result.thoth.correlationId, result.correlationId);
+  assert.equal(result.thoth.proofReceiptDigest, result.proofgrid.receiptDigest);
+  assert.equal(result.thoth.lineageKey, `${result.correlationId}:${result.packet.packetId}:${result.proofgrid.proofId}`);
 
   const stages = result.events.map((entry) => entry.stage);
   assert.deepEqual(stages, [
@@ -38,6 +78,38 @@ test('full factory promotes only after command-to-proof completes', () => {
   ]);
 });
 
+test('factory blocks promotion when no observed executor receipt exists', () => {
+  const result = runSoftwareFactory(intent);
+  assert.equal(result.execution.status, 'BLOCKED');
+  assert.equal(result.execution.evidenceClass, 'none');
+  assert.equal(result.execution.blocker, 'missing_observed_execution_evidence');
+  assert.equal(result.devos.testsPassed, false);
+  assert.equal(result.seca.decision, 'FAIL');
+  assert.equal(result.medusa.allowed, false);
+  assert.equal(result.promotion.promoted, false);
+  assert.equal(result.proofgrid.executionId, result.execution.executionId);
+  assert.equal(result.proofgrid.executionProofUri, null);
+  assert.equal(result.thoth.buildOrderId, result.packet.buildOrderId);
+  assert.equal(result.thoth.sourceOwner, 'METAFORGE');
+  assert.equal(result.thoth.proofReceiptDigest, result.proofgrid.receiptDigest);
+});
+
+test('factory rejects mismatched resident artifact evidence', () => {
+  const mismatchAdapter: ExecutionAdapter = (artifact) => ({
+    executor: 'EDEN',
+    evidenceClass: 'resident-observed',
+    outcome: 'SUCCEEDED',
+    exitCode: 0,
+    artifactDigest: `wrong-${artifact.digest}`,
+    proofUri: `proof://resident/${artifact.artifactId}`,
+    observedAt: new Date().toISOString(),
+  });
+  const result = runSoftwareFactory(intent, mismatchAdapter);
+  assert.equal(result.execution.status, 'FAILED');
+  assert.equal(result.execution.blocker, 'artifact_digest_mismatch');
+  assert.equal(result.promotion.promoted, false);
+});
+
 test('promotion gate blocks a failed SECA decision', () => {
   const seca = {
     artifactId: 'artifact-test',
@@ -51,7 +123,13 @@ test('promotion gate blocks a failed SECA decision', () => {
     archiveId: 'archive-test',
     artifactId: 'artifact-test',
     proofId: 'proof-test',
-    lineageKey: 'corr-test:artifact-test',
+    packetId: 'packet-test',
+    buildOrderId: 'build-test',
+    sourceOwner: 'METAFORGE' as const,
+    runId: 'run-test',
+    correlationId: 'corr-test',
+    proofReceiptDigest: 'a'.repeat(64),
+    lineageKey: 'corr-test:packet-test:proof-test',
     archivedAt: new Date().toISOString(),
   };
 

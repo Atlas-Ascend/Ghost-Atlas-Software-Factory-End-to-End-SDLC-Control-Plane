@@ -10,9 +10,20 @@ export function build(runId: string, correlationId: string, packet: WorkPacket):
   const artifact: BuildArtifact = {
     artifactId: id('artifact'),
     packetId: packet.packetId,
+    buildOrderId: packet.buildOrderId,
+    sourceOwner: packet.sourceOwner,
+    runId,
+    correlationId,
     kind: 'software-artifact',
     uri: `artifact://${packet.packetId}/build`,
-    digest: digest(JSON.stringify(packet)),
+    digest: digest(JSON.stringify({
+      packetId: packet.packetId,
+      buildOrderId: packet.buildOrderId,
+      sourceOwner: packet.sourceOwner,
+      correlationId,
+      objective: packet.objective,
+      acceptanceCriteria: packet.acceptanceCriteria,
+    })),
     builtAt: now(),
   };
 
