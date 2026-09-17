@@ -34,6 +34,7 @@ test('full factory promotes only after command-to-proof completes with observed 
   assert.equal(result.promotion.promoted, true);
 
   assert.equal(result.packet.sourceOwner, 'METAFORGE');
+  assert.equal(result.packet.requestedBy, intent.requestedBy);
   assert.ok(result.packet.buildOrderId.startsWith('build-'));
   assert.equal(result.artifact.packetId, result.packet.packetId);
   assert.equal(result.artifact.buildOrderId, result.packet.buildOrderId);
