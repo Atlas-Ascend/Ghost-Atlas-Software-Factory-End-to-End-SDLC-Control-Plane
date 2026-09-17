@@ -44,6 +44,7 @@ export interface WorkPacket {
   correlationId: string;
   objective: string;
   acceptanceCriteria: string[];
+  requestedBy: string;
   owner: string;
   buildOrderId: string;
   sourceOwner: 'METAFORGE';
