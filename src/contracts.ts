@@ -146,6 +146,8 @@ export interface ThothArchiveReceipt {
   artifactId: string;
   proofId: string;
   packetId: string;
+  buildOrderId: string;
+  sourceOwner: 'METAFORGE';
   runId: string;
   correlationId: string;
   proofReceiptDigest: string;
