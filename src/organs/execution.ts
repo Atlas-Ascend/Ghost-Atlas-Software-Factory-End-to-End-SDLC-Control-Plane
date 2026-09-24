@@ -36,6 +36,7 @@ export function execute(
         artifactDigestPresent: artifact.digest.length > 0,
         observedExecution: false,
       },
+      governance: artifact.governance,
     };
 
     return {
@@ -87,6 +88,7 @@ export function execute(
       observedExecution: true,
       ...evidence.telemetry,
     },
+    governance: artifact.governance,
   };
 
   return {
