@@ -39,6 +39,18 @@ export interface CommandIntent {
   definitionOfDone: string[];
 }
 
+export interface GovernedRunEnvelope {
+  run_id: string;
+  correlation_id: string;
+  requested_by: string;
+  authorization_ref: string;
+  authorization_expires_at: string;
+  request_digest: string;
+  policy_snapshot_digest: string;
+  registry_source_sha: string;
+  registry_blob_sha: string;
+}
+
 export interface WorkPacket {
   packetId: string;
   correlationId: string;
@@ -48,6 +60,7 @@ export interface WorkPacket {
   owner: string;
   buildOrderId: string;
   sourceOwner: 'METAFORGE';
+  governance?: GovernedRunEnvelope;
 }
 
 export interface BuildArtifact {
@@ -61,6 +74,7 @@ export interface BuildArtifact {
   uri: string;
   digest: string;
   builtAt: string;
+  governance?: GovernedRunEnvelope;
 }
 
 export interface ExecutionEvidence {
@@ -88,6 +102,7 @@ export interface ExecutionReceipt {
   startedAt: string;
   completedAt: string;
   telemetry: Record<string, number | string | boolean>;
+  governance?: GovernedRunEnvelope;
 }
 
 export interface DevOSVerificationReceipt {
@@ -140,6 +155,7 @@ export interface ProofGridReceipt {
   evidenceChain: string[];
   publishedAt: string;
   receiptDigest: string;
+  governance?: GovernedRunEnvelope;
 }
 
 export interface ThothArchiveReceipt {
@@ -154,6 +170,7 @@ export interface ThothArchiveReceipt {
   proofReceiptDigest: string;
   lineageKey: string;
   archivedAt: string;
+  governance?: GovernedRunEnvelope;
 }
 
 export interface PromotionReceipt {
