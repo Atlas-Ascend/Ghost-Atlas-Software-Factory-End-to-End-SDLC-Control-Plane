@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { runSoftwareFactory } from '../src/factory.js';
-import type { ExecutionAdapter } from '../src/contracts.js';
+import type { ExecutionAdapter, GovernedRunEnvelope } from '../src/contracts.js';
 import { review } from '../src/organs/medusa.js';
 import { promote } from '../src/organs/promotion.js';
 
@@ -9,6 +9,18 @@ const intent = {
   command: 'Build a verified demonstration artifact',
   requestedBy: 'ARCHITECT',
   definitionOfDone: ['build', 'execute', 'verify', 'prove', 'accept', 'secure', 'archive'],
+};
+
+const governedRun: GovernedRunEnvelope = {
+  run_id: 'run-upstream-001',
+  correlation_id: 'corr-upstream-001',
+  requested_by: 'ARCHITECT',
+  authorization_ref: 'janus://authorization/001',
+  authorization_expires_at: '2026-09-24T10:00:00Z',
+  request_digest: 'a'.repeat(64),
+  policy_snapshot_digest: 'b'.repeat(64),
+  registry_source_sha: 'c'.repeat(40),
+  registry_blob_sha: 'd'.repeat(40),
 };
 
 const residentAdapter: ExecutionAdapter = (artifact) => ({
@@ -76,6 +88,39 @@ test('full factory promotes only after command-to-proof completes with observed 
     'THOTH',
     'PROMOTE',
   ]);
+});
+
+test('factory preserves an upstream governed run envelope through proof and archive', () => {
+  const result = runSoftwareFactory(intent, residentAdapter, governedRun);
+
+  assert.equal(result.runId, governedRun.run_id);
+  assert.equal(result.correlationId, governedRun.correlation_id);
+  assert.deepEqual(result.packet.governance, governedRun);
+  assert.deepEqual(result.artifact.governance, governedRun);
+  assert.deepEqual(result.execution.governance, governedRun);
+  assert.deepEqual(result.proofgrid.governance, governedRun);
+  assert.deepEqual(result.thoth.governance, governedRun);
+  assert.equal(result.packet.requestedBy, governedRun.requested_by);
+  assert.equal(result.proofgrid.runId, governedRun.run_id);
+  assert.equal(result.proofgrid.correlationId, governedRun.correlation_id);
+  assert.equal(result.thoth.runId, governedRun.run_id);
+  assert.equal(result.thoth.correlationId, governedRun.correlation_id);
+});
+
+test('factory fails closed when governed requester does not match command intent', () => {
+  const mismatched = { ...governedRun, requested_by: 'OTHER' };
+  assert.throws(
+    () => runSoftwareFactory(intent, residentAdapter, mismatched),
+    /governed_run_requester_mismatch/,
+  );
+});
+
+test('factory fails closed when governed lineage is incomplete', () => {
+  const incomplete = { ...governedRun, registry_blob_sha: '' };
+  assert.throws(
+    () => runSoftwareFactory(intent, residentAdapter, incomplete),
+    /governed_run_missing_registry_blob_sha/,
+  );
 });
 
 test('factory blocks promotion when no observed executor receipt exists', () => {
