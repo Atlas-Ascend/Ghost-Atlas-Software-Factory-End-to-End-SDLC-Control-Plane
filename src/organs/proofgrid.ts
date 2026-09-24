@@ -34,6 +34,7 @@ export function publish(
       `medusa:${medusa.allowed ? 'ALLOW' : 'BLOCK'}`,
     ],
     publishedAt: now(),
+    governance: artifact.governance,
   };
   const receipt: ProofGridReceipt = {
     ...receiptBody,
