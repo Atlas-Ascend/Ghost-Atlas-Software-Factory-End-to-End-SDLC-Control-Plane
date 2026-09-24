@@ -15,6 +15,12 @@ export type Stage =
   | 'PROMOTE';
 
 export type Decision = 'PASS' | 'FAIL' | 'CONDITIONAL';
+export type ExecutionStatus = 'SUCCEEDED' | 'FAILED' | 'BLOCKED';
+export type ExecutionEvidenceClass =
+  | 'resident-observed'
+  | 'runtime-observed'
+  | 'external-observed'
+  | 'none';
 
 export interface EstateEvent<T = unknown> {
   eventId: string;
@@ -33,30 +39,70 @@ export interface CommandIntent {
   definitionOfDone: string[];
 }
 
+export interface GovernedRunEnvelope {
+  run_id: string;
+  correlation_id: string;
+  requested_by: string;
+  authorization_ref: string;
+  authorization_expires_at: string;
+  request_digest: string;
+  policy_snapshot_digest: string;
+  registry_source_sha: string;
+  registry_blob_sha: string;
+}
+
 export interface WorkPacket {
   packetId: string;
   correlationId: string;
   objective: string;
   acceptanceCriteria: string[];
+  requestedBy: string;
   owner: string;
+  buildOrderId: string;
+  sourceOwner: 'METAFORGE';
+  governance?: GovernedRunEnvelope;
 }
 
 export interface BuildArtifact {
   artifactId: string;
   packetId: string;
+  buildOrderId: string;
+  sourceOwner: 'METAFORGE';
+  runId: string;
+  correlationId: string;
   kind: 'software-artifact';
   uri: string;
   digest: string;
   builtAt: string;
+  governance?: GovernedRunEnvelope;
 }
+
+export interface ExecutionEvidence {
+  executor: string;
+  evidenceClass: Exclude<ExecutionEvidenceClass, 'none'>;
+  outcome: 'SUCCEEDED' | 'FAILED';
+  exitCode: number;
+  artifactDigest: string;
+  proofUri: string;
+  observedAt: string;
+  telemetry?: Record<string, number | string | boolean>;
+}
+
+export type ExecutionAdapter = (artifact: BuildArtifact) => ExecutionEvidence;
 
 export interface ExecutionReceipt {
   executionId: string;
   artifactId: string;
-  status: 'SUCCEEDED' | 'FAILED';
+  status: ExecutionStatus;
+  executor: string;
+  evidenceClass: ExecutionEvidenceClass;
+  proofUri: string | null;
+  artifactDigestVerified: boolean;
+  blocker: string | null;
   startedAt: string;
   completedAt: string;
   telemetry: Record<string, number | string | boolean>;
+  governance?: GovernedRunEnvelope;
 }
 
 export interface DevOSVerificationReceipt {
@@ -96,17 +142,35 @@ export interface MedusaReleaseDecision {
 export interface ProofGridReceipt {
   proofId: string;
   artifactId: string;
+  packetId: string;
+  artifactDigest: string;
+  buildOrderId: string;
+  sourceOwner: 'METAFORGE';
+  runId: string;
   correlationId: string;
+  executionId: string;
+  executionProofUri: string | null;
+  handoffOwner: 'THOTH';
+  handoffRequired: true;
   evidenceChain: string[];
   publishedAt: string;
+  receiptDigest: string;
+  governance?: GovernedRunEnvelope;
 }
 
 export interface ThothArchiveReceipt {
   archiveId: string;
   artifactId: string;
   proofId: string;
+  packetId: string;
+  buildOrderId: string;
+  sourceOwner: 'METAFORGE';
+  runId: string;
+  correlationId: string;
+  proofReceiptDigest: string;
   lineageKey: string;
   archivedAt: string;
+  governance?: GovernedRunEnvelope;
 }
 
 export interface PromotionReceipt {

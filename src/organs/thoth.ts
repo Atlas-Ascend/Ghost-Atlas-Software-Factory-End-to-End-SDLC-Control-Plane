@@ -11,8 +11,15 @@ export function archive(runId: string, correlationId: string, proof: ProofGridRe
     archiveId: id('archive'),
     artifactId: proof.artifactId,
     proofId: proof.proofId,
-    lineageKey: `${correlationId}:${proof.artifactId}`,
+    packetId: proof.packetId,
+    buildOrderId: proof.buildOrderId,
+    sourceOwner: proof.sourceOwner,
+    runId,
+    correlationId,
+    proofReceiptDigest: proof.receiptDigest,
+    lineageKey: `${correlationId}:${proof.packetId}:${proof.proofId}`,
     archivedAt: now(),
+    governance: proof.governance,
   };
 
   return {

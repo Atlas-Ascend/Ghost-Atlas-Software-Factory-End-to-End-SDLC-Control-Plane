@@ -27,5 +27,14 @@ jobs:
       - name: Build and test
         run: npm run check
 
-      - name: Command-to-proof smoke test
-        run: npm run demo -- "CI smoke-test artifact"
+      - name: Command-to-proof fail-closed smoke test
+        shell: bash
+        run: |
+          set +e
+          output="$(npm run demo -- "CI smoke-test artifact" 2>&1)"
+          status=$?
+          set -e
+          printf '%s\n' "$output"
+          test "$status" -eq 1
+          grep -q '"promoted": false' <<<"$output"
+          grep -q '"type": "artifact.execution-blocked"' <<<"$output"

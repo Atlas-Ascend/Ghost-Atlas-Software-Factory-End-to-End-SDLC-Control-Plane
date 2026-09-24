@@ -1,4 +1,4 @@
-import type { CommandIntent, EstateEvent, FactoryRunResult } from './contracts.js';
+import type { CommandIntent, EstateEvent, ExecutionAdapter, FactoryRunResult, GovernedRunEnvelope } from './contracts.js';
 import { id } from './lib.js';
 import { routeCommand } from './organs/control-plane.js';
 import { build } from './organs/metaforge.js';
@@ -11,18 +11,50 @@ import { publish } from './organs/proofgrid.js';
 import { archive } from './organs/thoth.js';
 import { promote } from './organs/promotion.js';
 
-export function runSoftwareFactory(intent: CommandIntent): FactoryRunResult {
-  const runId = id('run');
-  const correlationId = id('corr');
+function validateGovernedRun(intent: CommandIntent, governedRun: GovernedRunEnvelope): void {
+  const required: Array<keyof GovernedRunEnvelope> = [
+    'run_id',
+    'correlation_id',
+    'requested_by',
+    'authorization_ref',
+    'authorization_expires_at',
+    'request_digest',
+    'policy_snapshot_digest',
+    'registry_source_sha',
+    'registry_blob_sha',
+  ];
+
+  for (const key of required) {
+    if (!governedRun[key]?.trim()) {
+      throw new Error(`governed_run_missing_${key}`);
+    }
+  }
+
+  if (governedRun.requested_by !== intent.requestedBy) {
+    throw new Error('governed_run_requester_mismatch');
+  }
+}
+
+export function runSoftwareFactory(
+  intent: CommandIntent,
+  executionAdapter?: ExecutionAdapter,
+  governedRun?: GovernedRunEnvelope,
+): FactoryRunResult {
+  if (governedRun) {
+    validateGovernedRun(intent, governedRun);
+  }
+
+  const runId = governedRun?.run_id ?? id('run');
+  const correlationId = governedRun?.correlation_id ?? id('corr');
   const events: EstateEvent[] = [];
 
-  const control = routeCommand(runId, correlationId, intent);
+  const control = routeCommand(runId, correlationId, intent, governedRun);
   events.push(...control.events);
 
   const metaforge = build(runId, correlationId, control.packet);
   events.push(metaforge.event);
 
-  const execution = execute(runId, correlationId, metaforge.artifact);
+  const execution = execute(runId, correlationId, metaforge.artifact, executionAdapter);
   events.push(execution.event);
 
   const devos = verify(runId, correlationId, metaforge.artifact, execution.receipt);
@@ -37,7 +69,15 @@ export function runSoftwareFactory(intent: CommandIntent): FactoryRunResult {
   const medusa = review(runId, correlationId, seca.decision);
   events.push(medusa.event);
 
-  const proofgrid = publish(runId, correlationId, prometheus.packet, seca.decision, medusa.decision);
+  const proofgrid = publish(
+    runId,
+    correlationId,
+    metaforge.artifact,
+    prometheus.packet,
+    execution.receipt,
+    seca.decision,
+    medusa.decision,
+  );
   events.push(proofgrid.event);
 
   const thoth = archive(runId, correlationId, proofgrid.receipt);
