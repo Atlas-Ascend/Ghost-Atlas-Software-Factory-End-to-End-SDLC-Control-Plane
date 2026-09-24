@@ -19,6 +19,7 @@ export function archive(runId: string, correlationId: string, proof: ProofGridRe
     proofReceiptDigest: proof.receiptDigest,
     lineageKey: `${correlationId}:${proof.packetId}:${proof.proofId}`,
     archivedAt: now(),
+    governance: proof.governance,
   };
 
   return {
