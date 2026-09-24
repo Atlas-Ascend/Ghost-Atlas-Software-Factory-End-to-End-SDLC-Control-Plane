@@ -23,8 +23,10 @@ export function build(runId: string, correlationId: string, packet: WorkPacket):
       correlationId,
       objective: packet.objective,
       acceptanceCriteria: packet.acceptanceCriteria,
+      governance: packet.governance,
     })),
     builtAt: now(),
+    governance: packet.governance,
   };
 
   return {
