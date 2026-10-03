@@ -34,6 +34,50 @@
     "Prometheus synthesizes evidence but does not accept releases.",
     "SECA acceptance and Medusa release allowance are both required for promotion.",
     "ProofGrid publication and Thoth archive precede canonical promotion.",
-    "Every stage preserves runId and correlationId lineage."
+    "Every stage preserves runId and correlationId lineage.",
+    "Every Packet OS work packet carries a governed SDLC prompt program.",
+    "Illegal SDLC state jumps are rejected.",
+    "Prompt compilation does not grant authorization, verification, or promotion authority."
+  ],
+  "promptProgram": {
+    "id": "software.full-build",
+    "version": "1.0.0",
+    "compilerOwner": "ATLAS_MIND",
+    "workGrammarOwner": "PACKET_OS",
+    "executionOwner": "METAFORGE",
+    "authorizationOwner": "JANUS",
+    "verificationOwners": [
+      "DEVOS",
+      "SECA"
+    ],
+    "releaseBoundaryOwner": "MEDUSA",
+    "proofOwner": "PROOFGRID",
+    "lineageOwner": "THOTH",
+    "mode": "CONVERGENCE_ONLY"
+  },
+  "sdlcLifecycle": [
+    "INTAKE",
+    "FORENSIC_DISCOVERY",
+    "CANONICALIZATION",
+    "REQUIREMENTS_LOCK",
+    "DESIGN_LOCK",
+    "IMPLEMENTATION_READY",
+    "BUILDING",
+    "INTEGRATING",
+    "VERIFYING",
+    "SECURITY_REVIEW",
+    "RELEASE_READY",
+    "DEPLOYING",
+    "RUNTIME_VERIFICATION",
+    "PROOF_GENERATION",
+    "DOCUMENTING",
+    "ARCHIVED"
+  ],
+  "recoveryTransitions": [
+    "VERIFYING -> BUILDING",
+    "SECURITY_REVIEW -> BUILDING",
+    "RELEASE_READY -> BUILDING",
+    "DEPLOYING -> BUILDING",
+    "RUNTIME_VERIFICATION -> DEPLOYING"
   ]
 }
