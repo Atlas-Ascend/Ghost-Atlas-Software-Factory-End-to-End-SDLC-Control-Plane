@@ -25,6 +25,12 @@ const trace = result.events.map((entry) => ({
 console.log(JSON.stringify({
   runId: result.runId,
   correlationId: result.correlationId,
+  promptProgram: {
+    id: result.packet.promptProgram.programId,
+    version: result.packet.promptProgram.version,
+    compiledBy: result.packet.promptProgram.compiledBy,
+    lifecycle: result.packet.promptProgram.lifecycle,
+  },
   promoted: result.promotion.promoted,
   artifactId: result.artifact.artifactId,
   proofId: result.proofgrid.proofId,

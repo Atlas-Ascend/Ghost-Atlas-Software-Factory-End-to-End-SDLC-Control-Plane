@@ -111,3 +111,14 @@ The same contracts are intended to back the production topology already being bu
 `SOFTWARE_FACTORY_V1 = IMPLEMENTED_ON_FEATURE_BRANCH`
 
 Promotion to `main` requires CI build/test/smoke proof.
+
+
+## Governed one-stop SDLC compiler
+
+Every software command is now compiled into `software.full-build@1.0.0` before Packet OS dispatch.
+
+The compiled program carries the full machine-validated SDLC lifecycle:
+
+`INTAKE → FORENSIC_DISCOVERY → CANONICALIZATION → REQUIREMENTS_LOCK → DESIGN_LOCK → IMPLEMENTATION_READY → BUILDING → INTEGRATING → VERIFYING → SECURITY_REVIEW → RELEASE_READY → DEPLOYING → RUNTIME_VERIFICATION → PROOF_GENERATION → DOCUMENTING → ARCHIVED`.
+
+This is a convergence patch to the existing Software Factory. It does not create a second build framework or move authorization/verification authority into the prompt layer.
