@@ -16,6 +16,24 @@ export type Stage =
 
 export type Decision = 'PASS' | 'FAIL' | 'CONDITIONAL';
 
+export type SDLCState =
+  | 'INTAKE'
+  | 'FORENSIC_DISCOVERY'
+  | 'CANONICALIZATION'
+  | 'REQUIREMENTS_LOCK'
+  | 'DESIGN_LOCK'
+  | 'IMPLEMENTATION_READY'
+  | 'BUILDING'
+  | 'INTEGRATING'
+  | 'VERIFYING'
+  | 'SECURITY_REVIEW'
+  | 'RELEASE_READY'
+  | 'DEPLOYING'
+  | 'RUNTIME_VERIFICATION'
+  | 'PROOF_GENERATION'
+  | 'DOCUMENTING'
+  | 'ARCHIVED';
+
 export interface EstateEvent<T = unknown> {
   eventId: string;
   correlationId: string;
@@ -33,12 +51,22 @@ export interface CommandIntent {
   definitionOfDone: string[];
 }
 
+export interface CompiledPromptProgram {
+  programId: string;
+  version: string;
+  compiledBy: 'ATLAS_MIND';
+  lifecycle: SDLCState[];
+  policies: string[];
+  prompt: string;
+}
+
 export interface WorkPacket {
   packetId: string;
   correlationId: string;
   objective: string;
   acceptanceCriteria: string[];
   owner: string;
+  promptProgram: CompiledPromptProgram;
 }
 
 export interface BuildArtifact {
