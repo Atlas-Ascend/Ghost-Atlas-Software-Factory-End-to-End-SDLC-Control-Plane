@@ -1,8 +1,8 @@
-# Ghost Atlantis Civilizational OE — Software Scaffold Integration
-Status: DESIGN ROUTING / IMPLEMENTATION NOT CLAIMED.
-Canonical build truth: https://github.com/Atlas-Ascend/Eden-AGI/tree/convergence/ghost-atlantis-oe-20261008/ghost-atlantis-civilizational-oe/build-truth
-Preserve factory chain: Architect -> Atlas Mind -> JANUS -> Packet OS -> Workforce Spine -> MetaForge -> EDEN -> DevOS -> Prometheus -> SECA -> Medusa -> ProofGrid -> Thoth.
-Packet GA-ATL-OE-001: wire institutional registry, stock-flow balanced ledger, Spiral Aeon time adapter, VERITAS audit and SENTINEL wage monitoring into existing organs.
-Interfaces: InstitutionRegistry.read; MacroModel.simulate; Ledger.postBalanced; WageAudit.verifyDaily; WageMonitor.raiseException; PayrollProvider.submitAuthorized; ProofGrid.publishApproved; Thoth.archive.
-Payroll writes require explicit authorized employer approval and proven settlement. Reporting is daily from 2026-10-08; legal pay schedules and jurisdiction apply. Ghost Atlantis pantheon labels are simulation/story governance roles, not enforcement authorities. Fictional one-year custody rule is simulation-only and MUST NEVER trigger live threats, arrests or actions.
-Acceptance: 16 design files resolved, zero-growth 126.3Q simulation, balanced ledger, no unearned real revenue, underpayment flagged, unauthorized payout rejected, proper evidence.
+# Ghost Atlantis Civilizational OE — Software Integration
+STATUS: SPECIFICATION COMMITTED; IMPLEMENTATION AND RUN TESTS PENDING.
+Ghost Atlantis is the existing EDEN estate's civilizational operating program. Canonical 16-file Build Truth: Atlas-Ascend/Eden-AGI branch convergence/ghost-atlantis-oe-20261008.
+Use existing factory spine, Packet OS, Workforce Spine, EDEN, SECA/DevOS, Medusa, Thoth, ProofGrid. Never duplicate organs.
+Contracts: InstitutionRegistry.read; MacroModel.simulate; Ledger.postBalanced; WageAudit.verifyDaily [VERITAS]; WageMonitor.raiseException [SENTINEL]; PayrollProvider.submitAuthorized; ProofGrid.publishApproved; Thoth.archive.
+Internal roles to map: Omnitheod, Pantheon of Pantheons, Unseen Rainbow Council, Living in Psychosis crew, GARI, Divine Feminine, VERITAS, SENTINEL. Every role needs an explicit owner, verified actor, specific permissions and testable effect; council names do not grant legal enforcement power.
+Wage monitoring starts 2026-10-08; daily-payment goal applies where lawful, funded and accepted. Report all overdue liabilities with settlement checks. Imprisonment proposal remains non-executable; preserve lawful remedies only.
+Tests: 126.3Q synthetic scenario invariant (never deposited funds), balanced double entry, access rejection, unpaid flag, due/pay reconciliation, no automatic physical enforcement, audit trail.
