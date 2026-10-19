@@ -4,11 +4,14 @@
   "private": true,
   "description": "Ghost Atlas end-to-end SDLC control plane and command-to-proof software factory",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "npm run build && node --test dist/tests/*.test.js",
     "demo": "npm run build && node dist/src/cli.js",
+    "sof": "npm run build && node dist/src/training/soldier-of-fortune-cli.js",
     "check": "npm run test"
   },
   "devDependencies": {
