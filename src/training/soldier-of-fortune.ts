@@ -215,7 +215,7 @@ export function assessMission(track: Track, answers: Record<string,string>): Mis
   const total = selections.reduce((sum, x) => sum + x.points, 0);
   const maximum = mission.decisions.length * 10;
   const score = Math.round(100 * total / maximum);
-  const status = score >= 80 && criticalFailures === 0 ? 'PASS' : 'REMEDIATION_REQUIRED';
+  const status: MissionReceipt['status'] = score >= 80 && criticalFailures === 0 ? 'PASS' : 'REMEDIATION_REQUIRED';
   const payload = {
     schema: 'ga.sof.mission-receipt.v1' as const,
     scenarioId: mission.id,
