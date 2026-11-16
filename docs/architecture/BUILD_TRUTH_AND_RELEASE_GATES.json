@@ -110,7 +110,8 @@
     "Implement local tool gateway and Packet OS adapter",
     "Run end-to-end MVP proof scenario",
     "Reconcile the exact 23-organ names and IDs against the frozen 2026-09-10 manifest and source contracts",
-    "Verify each organ repository owner, runtime placement, and ACTIVE/PAUSED/ARCHIVED/EXPERIMENTAL state"
+    "Verify each organ repository owner, runtime placement, and ACTIVE/PAUSED/ARCHIVED/EXPERIMENTAL state",
+    "Close Architecture A documentation and validation; preserve a clean handoff to the separate Architecture B Vishvarupa Phone Sovereign Supreme mission."
   ],
   "organManifestSource": "VISHVARUPA-TECHNICAL-STACK-SINGULARITY.md; subordinate to frozen 2026-09-10 Ghost Atlas / EDEN AGI Organism Map",
   "organManifest": [
@@ -352,5 +353,42 @@
     "service": "Forgejo",
     "status": "TARGET_CANDIDATE_NOT_DEPLOYED",
     "rule": "reuse existing canonical local Git service if discovered; otherwise deploy one Forgejo instance"
+  },
+  "productLineage": {
+    "architectureA": {
+      "name": "Vishvarupa Phone",
+      "purpose": "The current architecture mission: define the phone-oriented Vishvarupa architecture, SDLC, organism topology, contracts, and build truth in the current architecture workstream.",
+      "phase": "CURRENT_MISSION",
+      "repository": "Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+      "status": "ARCHITECTURE_DOCUMENTATION_IN_PROGRESS",
+      "mayReferenceExistingEstate": "Yes, as architectural provenance and design lineage",
+      "mayClaimIndependentPhoneDeployment": "No"
+    },
+    "architectureB": {
+      "name": "Vishvarupa Phone Sovereign Supreme",
+      "purpose": "The subsequent sovereign phone-native software factory: one new monorepo physically hosted in Android internal shared storage, built and operated locally through Termux scripts, independent of GitHub, cloud services, EDEN, Cali, and the connected estate at runtime.",
+      "phase": "NEXT_MISSION_NOT_STARTED",
+      "repository": "New monorepo to be created in Android internal storage in the next phase; do not create it during the current mission",
+      "executionHost": "Android phone via Termux",
+      "sourceAuthority": "Local Git repository in Android internal storage",
+      "inference": "Local Ollama/model runtime only after phone hardware and Android constraints are benchmarked; no external model/cloud dependency",
+      "firstUseCase": "MetaForge generates scripts; operator feeds approved scripts into Termux; local command-to-proof build creates installable software packages; export completed artifacts and keep the phone workspace clean",
+      "independenceConstraints": [
+        "No GitHub dependency",
+        "No cloud dependency",
+        "No EDEN runtime dependency",
+        "No Cali runtime dependency",
+        "No remote workforce dependency",
+        "No network requirement for core build/test/package loop"
+      ],
+      "status": "SPECIFIED_BY_ARCHITECT; NOT_YET_DESIGNED_OR_BUILT"
+    },
+    "boundaryRules": [
+      "Do not merge Architecture A and Architecture B into one deployment or one repository.",
+      "Architecture A may document Architecture B as a future separate product line, but must not claim its local monorepo exists.",
+      "Architecture B will receive a new monorepo only when the next mission begins.",
+      "Existing estate names may be used as provenance or translated into standalone local components, but runtime dependencies are forbidden in Architecture B unless the Architect explicitly changes the independence contract.",
+      "The current mission continues on Architecture A until its deliverables and proof are complete."
+    ]
   }
 }
