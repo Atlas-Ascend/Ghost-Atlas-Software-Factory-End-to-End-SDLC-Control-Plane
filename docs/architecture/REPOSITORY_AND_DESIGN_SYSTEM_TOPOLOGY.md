@@ -75,3 +75,24 @@ Separate host prerequisites, build toolchain, runtime dependencies, developer to
 - Mermaid or PlantUML for versioned diagrams.
 
 Candidate tools are not approved dependencies until OS/architecture compatibility, license, security, offline behavior, version, checksum, and rollback are recorded.
+
+
+## 9. Existing source-lineage mapping — do not rebuild
+
+The estate source material establishes a strict boundary: **Design Repo = truth, architecture, specifications, and manifest. Software Scaffold Repo = implementation-ready code body.** MetaForge converts design truth into a folder body, manifest, repository plan, code handoff, runtime packet, audit, release, archive, and proof. These are separate responsibilities even when they are stored in related repositories.
+
+| Layer | Existing source / candidate | Current evidence and disposition |
+|---|---|---|
+| Software design truth | Existing MetaForge design corpus under the GhostAtlas Compiler Runtime Estate v2 source inventory; includes the Design Repo vs Software Scaffold Repo law and build-realization pipeline | Source artifact located in Library inventory; physical local path and live Git binding still require host verification |
+| General software factory | Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane | Existing canonical command-to-proof control plane; this architecture pack is being added here |
+| Specialized foundry lineage | GA-ATLAS-NATIVE-FOUNDRY, VULCAN-Agentic-Engineering-Foundry, Atlas-Company-9-Factory | Census disposition is general factory plus specialized foundries; salvage bounded capabilities into MetaForge, do not fork a competing factory |
+| Software scaffold lineage | Atlas-Ascend/nextjs, Atlas-Ascend/nextjs-ai-chatbot, Atlas-Ascend/nextjs-boilerplate | Census identifies stock starter, upstream Chat SDK template, and evolved JANUS Office Fabric/ServerForge scaffold; preserve provenance and salvage unique deltas |
+| UX design reference | DaVinci UI System in Ghost Atlas Estate Intelligence Suite 100-slide deck; EDEN cockpit target, dark-glass language, prototype shell, state language | Design reference artifact, not proof of a standalone canonical UX repository |
+| UX specifications | EDEN 3.0 UX wiremap, interface map, operator journeys, visual system, design tokens and component library source | Existing design outputs are described in the EDEN 3.0 source material; bind to the frozen owner before implementation |
+| Operator UI / office surfaces | Ghost-Atlas-Command-Center and EDEN-Resident-Office-Fabric | Bounded control-fabric and office-fabric contexts; preserve their separate responsibilities and close the existing runtime/publication/dispatch proof gaps |
+| Chat scaffold / cognition interface | nextjs-ai-chatbot plus Atlas-Mind-LLM | Existing first-chat storage scenarios were reported as failing in the September 12 archaeology queue; do not call the chat-to-model binding complete until those scenarios pass |
+| Toolchain and app catalog | Software Factory build-truth registry + MetaForge toolkit ecosystem | Canonical place to index tools, systems, apps, versions, licenses, install methods, dependencies, and verification commands; do not create another catalog |
+| Local Git service | No independent local Git service deployment was proven by the connected repository census | Inspect the target host and existing RepoForge/ServerForge/DevOS contracts before choosing Forgejo/Gitea or any service |
+
+The DaVinci deck describes a commercial/UI layer and names scaffold contents such as apps/eden-cockpit, apps/admin-console, services/registry-service, services/proof-service, and packages/ui. Treat those as design targets to reconcile with existing repositories, not permission to create a duplicate repository tree.
+
