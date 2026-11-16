@@ -75,6 +75,7 @@ export interface BuildArtifact {
   kind: 'software-artifact';
   uri: string;
   digest: string;
+  provenance: 'SIMULATED' | 'REAL';
   builtAt: string;
 }
 
@@ -82,6 +83,7 @@ export interface ExecutionReceipt {
   executionId: string;
   artifactId: string;
   status: 'SUCCEEDED' | 'FAILED';
+  mode: 'SIMULATED' | 'REAL';
   startedAt: string;
   completedAt: string;
   telemetry: Record<string, number | string | boolean>;
