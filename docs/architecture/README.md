@@ -15,6 +15,7 @@ This directory is the architecture and implementation-control pack for the local
 9. SYSTEM_DEPENDENCY_AND_TOOLCHAIN_BASELINE.md — host roles, dependency matrix, GX10/Ollama bootstrap, security and verification.
 10. UX_SYSTEM_AND_OPERATOR_WORKBENCH_SPEC.md — DaVinci/EDEN UX lineage, operator information architecture, states, approvals and accessibility.
 11. C4_SYSTEM_TOPOLOGY_AND_SEQUENCE.md — context/container topology, sequence, trust boundaries and event envelope.
+12. VISHVARUPA_PHONE_PRODUCT_LINE_BOUNDARY.md — binding separation between the current Vishvarupa Phone architecture and the next, independent Android/Termux Sovereign Supreme monorepo.
 
 ## Current truth
 
