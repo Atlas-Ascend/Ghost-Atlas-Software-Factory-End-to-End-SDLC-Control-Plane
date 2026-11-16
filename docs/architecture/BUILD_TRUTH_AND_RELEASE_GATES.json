@@ -314,5 +314,43 @@
       "state": "DEPLOYMENT_NOT_VERIFIED",
       "decision": "inspect existing host and RepoForge/ServerForge/DevOS owner before selecting one service"
     }
+  },
+  "inferenceNode": {
+    "selectedTarget": "ASUS Ascent GX10",
+    "accelerator": "NVIDIA GB10 Grace Blackwell",
+    "unifiedMemoryGB": 128,
+    "selectedStorageTB": 2,
+    "selectionStatus": "USER_SELECTED_TARGET_NOT_DEPLOYMENT_VERIFIED",
+    "ollamaArchitecture": "Linux ARM64",
+    "localInferenceOnlyByDefault": true,
+    "candidates": [
+      {
+        "model": "qwen3-coder:30b",
+        "role": "primary coding candidate for PROMETHEUS benchmark",
+        "status": "CANDIDATE_NOT_PINNED"
+      },
+      {
+        "model": "devstral:24b",
+        "role": "coding-agent comparison candidate",
+        "status": "CANDIDATE_NOT_PINNED"
+      },
+      {
+        "model": "qwen3.8:27b",
+        "role": "general reasoning and coding comparison candidate",
+        "status": "CANDIDATE_NOT_PINNED"
+      },
+      {
+        "model": "ripple-preview:65b",
+        "role": "larger long-horizon coding comparison candidate",
+        "status": "CANDIDATE_NOT_PINNED"
+      }
+    ],
+    "modelSelectionAuthority": "PROMETHEUS benchmark with Architect approval",
+    "networkBoundary": "private interface behind authenticated gateway; Ollama API not exposed publicly"
+  },
+  "localGitTarget": {
+    "service": "Forgejo",
+    "status": "TARGET_CANDIDATE_NOT_DEPLOYED",
+    "rule": "reuse existing canonical local Git service if discovered; otherwise deploy one Forgejo instance"
   }
 }
