@@ -23,11 +23,43 @@ The MVP is one reliable command-to-proof path on the existing host and repositor
 | ProofGrid | Proof bundle publication | lineage and receipts | proof ID and manifest | cannot invent evidence |
 | Thoth | Immutable archive | source/evidence references | archive ID and lineage | preserve failed attempts |
 
-## 3. The 23-organ truth rule
+## 3. Canonical 23-organ Architect's Body
 
-The exact 23 canonical organ names and IDs must be imported verbatim from the frozen September 10, 2026 Organism Map. Do not manufacture 23 names by splitting, renaming, or promoting subsystems. The estate registry must record for each canonical organ: ID/name, repository owner, mission/non-goals, runtime owner, API/event/packet contracts, state (ACTIVE/PAUSED/ARCHIVED/EXPERIMENTAL), dependencies, privilege class, health check, tests, proof requirement, deployment profile, last verified commit, and verification timestamp.
+The canonical body is the existing 23-organ roster. This pack preserves the names and order from the Vishvarupa Technical-Stack Singularity source, subordinate to the frozen 2026-09-10 Organism Map. It does not add PROMETHEUS, Mothership, OmniMind, Hydra, BodyForge, CTHULU Omega, COSMOS, AEON, or MINDNOS as extra organs.
 
-The MVP can have a subset ACTIVE while the remainder are PAUSED or EXPERIMENTAL. The phrase all 23 working is valid only when every organ has an implemented adapter, passing contract tests, health signal, and end-to-end invocation proof. A name in a registry is not a running organ.
+| # | Canonical organ | MVP routing role | Initial activation truth |
+|---:|---|---|---|
+| 1 | Atlas Mind / Vishvarupa | Conversational cognition, planning, local coding interface | ACTIVE CANDIDATE; runtime proof required |
+| 2 | ARCADIA | Creative/experience capability routed through organism contracts | NOT VERIFIED |
+| 3 | Thoth | Memory, archive, provenance and lineage | ACTIVE CANDIDATE; archive proof required |
+| 4 | Universal Atlas / SESHAT | Knowledge/ontology indexing and structured estate context | NOT VERIFIED |
+| 5 | NAVI | Cognitive governance and pattern-recognition support | SUPPORTING; verify integration |
+| 6 | Janus Prime / Odin | Executive operational command and authorization | ACTIVE CANDIDATE; authorization proof required |
+| 7 | Packet OS | Atomic work grammar, CRF packets and state transitions | ACTIVE CANDIDATE; CRF proof required |
+| 8 | MetaForge | Software design-to-build factory and packaging | ACTIVE CANDIDATE; real artifact proof required |
+| 9 | Workforce Spine | Task queue, routing, ownership, scheduling and handoff; CTHULU Omega is a bounded worker/orchestration capability under this organ | ACTIVE CANDIDATE; dispatch proof required |
+| 10 | SECA / DevOS | Independent acceptance plus engineering verification | ACTIVE CANDIDATE; real test evidence required |
+| 11 | Medusa | Security, privacy and public/private release review | ACTIVE CANDIDATE; policy proof required |
+| 12 | EDEN / Cali | Runtime body and CRF-governed execution profiles | ACTIVE CANDIDATE; host/runtime proof required |
+| 13 | CrownGrid | Estate I/O routing and service connectivity | NOT VERIFIED |
+| 14 | ServerForge | Discord/service nervous-system and communication bridge | NOT VERIFIED |
+| 15 | RoadBridge | Field capture and external-world input | NOT VERIFIED |
+| 16 | ProofGrid | Proof publication and evidence-chain closure | ACTIVE CANDIDATE; proof bundle required |
+| 17 | Audience Forge | Audience/content production and distribution capability | NOT VERIFIED |
+| 18 | GARI | Research, institute and public-accountability capability | NOT VERIFIED |
+| 19 | HYPERNET-OMEGA | Infrastructure/embodiment and networked hardware fabric | NOT VERIFIED |
+| 20 | META-FATE | Cross-system governance, boundary and routing capability | NOT VERIFIED |
+| 21 | NHCM | Neuro-holistic cognitive model/context framework | NOT VERIFIED |
+| 22 | CSA-95 | Canonical organ; exact operational charter must be bound from its source contract | NOT VERIFIED |
+| 23 | MECA | Canonical organ; exact operational charter must be bound from its source contract | NOT VERIFIED |
+
+**Control-plane and loop distinctions:** Mothership and OmniMind are the control plane, not additional organs. Hydra / Reverse Uno is the healing loop. PROMETHEUS is the bounded evolution, evidence and promotion loop, not a 24th organ. BodyForge is the resource governor. COSMOS, AEON and MINDNOS remain subordinate theory/runtime systems, not new independent organs. CTHULU Omega is a Workforce Spine capability, not an extra organ.
+
+The table's initial statuses are conservative routing states, not deployment claims. Each organ must be reconciled to the exact frozen manifest ID, repository owner, runtime, and current state before activation. The exact operational charters for ARCADIA, CSA-95, and MECA must be read from their canonical contracts; the table does not invent those contracts.
+
+## 4. Activation and proof rule
+
+The MVP can have a subset ACTIVE while the remainder are PAUSED, ARCHIVED, or EXPERIMENTAL. The phrase all 23 working is valid only when every organ has an implemented adapter or verified native capability, passing contract tests, health signal, and end-to-end invocation proof. A name in a registry is not a running organ. Record for every organ: exact manifest ID/name, repository owner, mission/non-goals, runtime owner, API/event/packet contracts, state, dependencies, privilege class, health check, tests, proof requirement, deployment profile, last verified commit, and verification timestamp.
 
 ## 4. Lightweight deployment
 
