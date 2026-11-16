@@ -2,7 +2,7 @@
 
 ## 1. System context
 
-The Architect is the only sovereign command source. The Architect interacts with Atlas Mind through an operator client. Atlas Mind uses NHCM/OmniMind context orchestration and local Ollama inference. JANUS decides authorization. Packet OS creates the work contract. Workforce Spine dispatches. MetaForge creates software changes. EDEN/Cali execute. DevOS, PROMETHEUS, SECA, Medusa, ProofGrid, and Thoth independently perform their truth and evidence responsibilities. The local Git service stores source. The GX10 inference node is isolated from the execution host.
+The Architect is the only sovereign command source. The Architect interacts with Atlas Mind through an operator client. Atlas Mind uses NHCM/OmniMind context orchestration; GA-NIF is the authenticated inference ingress and routes to local Ollama. JANUS decides authorization. Packet OS creates the work contract. Workforce Spine dispatches. MetaForge creates software changes. EDEN/Cali execute. DevOS, PROMETHEUS, SECA, Medusa, ProofGrid, and Thoth independently perform their truth and evidence responsibilities. The local Git service stores source. The GX10 inference node is isolated from the execution host.
 
     ARCHITECT
       |
