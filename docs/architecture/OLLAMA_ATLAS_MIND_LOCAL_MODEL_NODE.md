@@ -4,6 +4,18 @@
 
 Ollama is the local inference server. It is not the entire agent, OS, memory system, or tool executor. Atlas Mind is the conversational application around the model. NHCM / OmniMind is the cognitive orchestration direction, subject to verified repository contracts. A model may propose a tool call; a separate gateway validates and executes it. JANUS and Packet OS remain outside model self-authorization.
 
+## 2.1 Selected independent inference-node target
+
+The selected direction is a dedicated ASUS Ascent GX10 node with NVIDIA GB10 Grace Blackwell and 128 GB unified memory, using the 2 TB SSD configuration. This is a target configuration, not proof that the machine has been purchased, received, or deployed. ASUS documents the 128 GB unified-memory configuration and 1/2/4 TB storage choices. Ollama's current NVIDIA support table explicitly lists GB10 (DGX Spark) at compute capability 12.1, and its Linux distribution includes an ARM64 package. Therefore the intended GX10/Ollama pairing is technically aligned at the published hardware-support level; actual driver, DGX OS, Ollama build, model, thermals, and sustained throughput still require acceptance tests.
+
+Role separation:
+- GX10: dedicated local inference/model node; Ollama, model weights, model evaluation, embedding/reranking only if benchmarked.
+- EDEN/Cali host: packet execution, MetaForge workspaces, build/test workers, runtime adapters, and artifact production.
+- Operator device: conversational client, command capture, approval, status, and proof inspection.
+- Git service: local source authority on the private estate network; may be hosted on the EDEN host or another existing infrastructure node after resource review.
+
+Do not combine all roles on the GX10 merely because it has unified memory. Preserve the independent inference boundary so model load spikes do not starve execution, packet processing, or evidence generation.
+
 ## 2. Deployment profiles
 
 **Colocated MVP:** Ollama on the EDEN host if memory, GPU/accelerator, thermal, and concurrency budgets permit. Bind to loopback.
