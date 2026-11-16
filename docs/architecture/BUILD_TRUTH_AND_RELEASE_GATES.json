@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "product": "EDEN Local Coding Organism",
+  "canonicalOwner": "Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+  "mode": "CONVERGENCE_ONLY",
+  "status": "ARCHITECTURE_DEFINED_IMPLEMENTATION_NOT_YET_VERIFIED",
+  "baseline": {
+    "softwareFactory": "existing canonical control plane",
+    "runtimes": [
+      "EDEN",
+      "Cali-CRF"
+    ],
+    "modelRuntime": "Ollama target; installation/model digest unverified",
+    "cognitiveLayer": [
+      "Atlas Mind",
+      "NHCM",
+      "OmniMind"
+    ],
+    "sourceControl": "existing local Git owner to be verified; GitHub optional mirror"
+  },
+  "commandToProofSpine": [
+    "ATLAS_MIND",
+    "SAMI",
+    "JANUS_PRIME",
+    "PACKET_OS_CRF",
+    "WORKFORCE_SPINE_CTHULHU_OMEGA",
+    "METAFORGE",
+    "EDEN_OR_CALI",
+    "DEVOS",
+    "PROMETHEUS_AIS_COMPETITION",
+    "SECA",
+    "MEDUSA",
+    "PROOFGRID",
+    "THOTH",
+    "PROMOTION_GATE"
+  ],
+  "truthAuthorities": {
+    "engineering": "DEVOS",
+    "evidence": "PROMETHEUS",
+    "acceptance": "SECA",
+    "releaseBoundary": "MEDUSA",
+    "proofPublication": "PROOFGRID",
+    "historicalLineage": "THOTH",
+    "authorization": "JANUS_PRIME",
+    "workState": "PACKET_OS_CRF",
+    "execution": "EDEN_AND_CALI"
+  },
+  "invariants": [
+    "No stage self-promotes",
+    "Model output is untrusted until schema and policy validation",
+    "No execution without an authorized Packet OS packet",
+    "No promotion without DevOS, PROMETHEUS, SECA, Medusa, ProofGrid, and Thoth receipts",
+    "Missing evidence blocks promotion",
+    "Every run preserves runId and correlationId",
+    "All generated changes are reviewable as diffs",
+    "Local-only mode forbids unapproved egress",
+    "No new organ or repository without an approved architecture decision",
+    "23-organ names must match the frozen 2026-09-10 manifest exactly"
+  ],
+  "lifecycle": [
+    "INTAKE",
+    "FORENSIC_DISCOVERY",
+    "CANONICALIZATION",
+    "REQUIREMENTS_LOCK",
+    "DESIGN_LOCK",
+    "IMPLEMENTATION_READY",
+    "BUILDING",
+    "INTEGRATING",
+    "VERIFYING",
+    "SECURITY_REVIEW",
+    "RELEASE_READY",
+    "DEPLOYING",
+    "RUNTIME_VERIFICATION",
+    "PROOF_GENERATION",
+    "DOCUMENTING",
+    "ARCHIVED"
+  ],
+  "releaseGate": {
+    "required": [
+      "JANUS_APPROVAL",
+      "PACKET_VALID",
+      "DEVOS_PASS",
+      "PROMETHEUS_REPORT",
+      "SECA_PASS",
+      "MEDUSA_ALLOW",
+      "PROOFGRID_BUNDLE",
+      "THOTH_ARCHIVE",
+      "RUNTIME_HEALTH"
+    ],
+    "failClosed": true
+  },
+  "repositoryPolicy": {
+    "createNewRepositories": false,
+    "preferredAction": "patch_existing_canonical_owner",
+    "branch": "architecture/eden-local-coding-organism-mvp",
+    "designAndUXOwners": "reconcile against frozen estate census before creating repositories"
+  },
+  "deploymentFacts": {
+    "ollamaInstalled": false,
+    "localModelPinned": false,
+    "localGitNodeDeployed": false,
+    "all23OrgansActive": false,
+    "endToEndMvpVerified": false
+  },
+  "nextProofRequired": [
+    "Import exact frozen 2026-09-10 23-organ manifest",
+    "Inspect EDEN/Cali host OS, CPU, RAM, GPU, disk, network",
+    "Inspect local Git service owner and deployment",
+    "Inspect Atlas Mind/NHCM/OmniMind actual model and tool contracts",
+    "Pin Ollama model by digest after PROMETHEUS evaluation",
+    "Implement local tool gateway and Packet OS adapter",
+    "Run end-to-end MVP proof scenario"
+  ]
+}
