@@ -28,6 +28,9 @@ The user experience is conversational; the execution substrate is typed, determi
 ### Experience plane
 Atlas Mind is the conversational interface: streaming chat, task status, plan review, diffs, approvals, artifacts, tests, and proof inspection. NHCM / OmniMind is the cognitive orchestration direction for context selection, reasoning strategy, specialist routing, and synthesis. SAMI handles administrative intake and operator coordination. NHCM / OmniMind capabilities must be mapped to their actual repository contracts before they are declared implemented.
 
+### Organism control plane and bounded loops
+The canonical Architect's Body contains 23 organs: Atlas Mind/Vishvarupa; ARCADIA; Thoth; Universal Atlas/SESHAT; NAVI; Janus Prime/Odin; Packet OS; MetaForge; Workforce Spine; SECA/DevOS; Medusa; EDEN/Cali; CrownGrid; ServerForge; RoadBridge; ProofGrid; Audience Forge; GARI; HYPERNET-OMEGA; META-FATE; NHCM; CSA-95; MECA. Mothership and OmniMind are the control plane, not additional organs. Hydra/Reverse Uno is the healing loop. PROMETHEUS is the bounded evolution/evidence/promotion loop, not an extra organ. BodyForge is the resource governor. COSMOS, AEON, and MINDNOS remain subordinate theory/runtime systems. CTHULU Omega is a bounded Workforce Spine orchestration capability.
+
 ### Command and governance plane
 JANUS PRIME owns executive operational authorization. Packet OS CRF owns atomic work packets, dependencies, transitions, acceptance criteria, and evidence obligations. SECA owns independent acceptance. Medusa owns the security and public/private release boundary. The promotion gate alone changes canonical state.
 
