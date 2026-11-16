@@ -52,3 +52,23 @@ Before package completion, record the exact commit SHA and artifact digest. Comm
 ## 7. Recovery acceptance
 
 Restore to a clean host or isolated volume. Verify repository count, refs, commit reachability, LFS objects, users/permissions, and successful clone/build of a representative project. A backup that has never been restored is not proven.
+
+
+## 8. Recommended local Git implementation
+
+The independent local Git target is **Forgejo**, unless host inspection proves that an existing RepoForge/ServerForge/local-Git service already owns this capability. Forgejo is selected as the default candidate because it provides a self-hosted Git service with web UI and SSH access while remaining operationally separate from GitHub. This is a service choice for the target design, not a claim that it is deployed.
+
+Recommended initial profile:
+- Single-node Forgejo with local persistent storage.
+- SQLite for the first single-host instance unless measured concurrency or existing estate standards require PostgreSQL.
+- Rootless container deployment where the host supports it.
+- Private network binding only; do not expose the web or SSH ports to the public internet.
+- Web UI on an internal address, SSH on a separately mapped port.
+- Persistent data volume, immutable image version/digest, explicit UID/GID, and documented upgrade path.
+- Local repositories are authoritative for offline work; GitHub remotes are optional mirrors.
+- Protected main branches; short-lived work branches; signed or attributable commits; webhooks only to authenticated internal endpoints.
+- Backups include Forgejo database, repositories, LFS, attachments/packages, configuration, SSH host keys, and secrets references. Stop Forgejo or use a consistent backup procedure before filesystem snapshots. Restore tests are mandatory.
+
+Official Forgejo Docker documentation provides the container deployment pattern, persistent data volume, and SSH/web port mapping. Its backup guide distinguishes the database, repository data, and storage paths; all must be included in a consistent backup.
+
+Do not copy a sample compose file and deploy it before checking host architecture, existing container runtime, network ownership, storage path, and whether an existing local Git service is already canonical.
