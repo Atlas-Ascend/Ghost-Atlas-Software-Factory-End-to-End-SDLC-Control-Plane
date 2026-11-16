@@ -111,147 +111,171 @@
     "Run end-to-end MVP proof scenario",
     "Reconcile the exact 23-organ names and IDs against the frozen 2026-09-10 manifest and source contracts",
     "Verify each organ repository owner, runtime placement, and ACTIVE/PAUSED/ARCHIVED/EXPERIMENTAL state",
-    "Close Architecture A documentation and validation; preserve a clean handoff to the separate Architecture B Vishvarupa Phone Sovereign Supreme mission."
+    "Close Architecture A documentation and validation; preserve a clean handoff to the separate Architecture B Vishvarupa Phone Sovereign Supreme mission.",
+    "Reconcile the 23-capability target against the frozen 2026-09-10 map; classify each as organ, control-plane surface, rail, governance layer, runtime, or campaign without creating new organs"
   ],
-  "organManifestSource": "VISHVARUPA-TECHNICAL-STACK-SINGULARITY.md; subordinate to frozen 2026-09-10 Ghost Atlas / EDEN AGI Organism Map",
+  "organManifestSource": "VISHVARUPA-TECHNICAL-STACK-SINGULARITY.md is a 23-item candidate list only; frozen 2026-09-10 Organism Map remains authoritative and retrieved excerpts do not provide 23 formal organ IDs.",
   "organManifest": [
     {
       "ordinal": 1,
       "canonicalName": "Atlas Mind / Vishvarupa",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 2,
       "canonicalName": "ARCADIA",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 3,
       "canonicalName": "Thoth",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 4,
       "canonicalName": "Universal Atlas / SESHAT",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 5,
       "canonicalName": "NAVI",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 6,
       "canonicalName": "Janus Prime / Odin",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 7,
       "canonicalName": "Packet OS",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 8,
       "canonicalName": "MetaForge",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 9,
       "canonicalName": "Workforce Spine",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 10,
       "canonicalName": "SECA / DevOS",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 11,
       "canonicalName": "Medusa",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 12,
       "canonicalName": "EDEN / Cali",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 13,
       "canonicalName": "CrownGrid",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 14,
       "canonicalName": "ServerForge",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 15,
       "canonicalName": "RoadBridge",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 16,
       "canonicalName": "ProofGrid",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 17,
       "canonicalName": "Audience Forge",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 18,
       "canonicalName": "GARI",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 19,
       "canonicalName": "HYPERNET-OMEGA",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 20,
       "canonicalName": "META-FATE",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 21,
       "canonicalName": "NHCM",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 22,
       "canonicalName": "CSA-95",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 23,
       "canonicalName": "MECA",
       "activationStatus": "NOT_VERIFIED",
-      "proofRequired": true
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     }
   ],
   "controlPlaneAndLoops": {
@@ -390,5 +414,35 @@
       "Existing estate names may be used as provenance or translated into standalone local components, but runtime dependencies are forbidden in Architecture B unless the Architect explicitly changes the independence contract.",
       "The current mission continues on Architecture A until its deliverables and proof are complete."
     ]
+  },
+  "organManifestStatus": "PROVISIONAL_23_CAPABILITY_TARGET_NOT_VERIFIED_23_ORGAN_CANONICAL_ROSTER",
+  "frozenMapEvidence": {
+    "namedCentralNodes": [
+      "EDEN AGI / Emerald Tablet OS",
+      "Architect / Sovereign Operator",
+      "JANUS / ODIN",
+      "Atlas Mind",
+      "Universal CaseGraph",
+      "Packet OS",
+      "Workforce Spine",
+      "Resident GARI",
+      "PROMETHEUS",
+      "THOTH",
+      "MetaForge",
+      "HYPERNET",
+      "CrownGrid",
+      "SECA / DevOS",
+      "Medusa",
+      "ProofGrid",
+      "ServerForge"
+    ],
+    "supportingLayers": [
+      "Universal data/intelligence layer",
+      "VIBE / operator surfaces",
+      "Infrastructure",
+      "Public surfaces",
+      "Rainbow Council / Omnitheon governance"
+    ],
+    "formal23OrganIdRosterPresent": false
   }
 }
