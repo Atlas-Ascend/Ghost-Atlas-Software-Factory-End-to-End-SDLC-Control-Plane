@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "RECONCILIATION_REQUIRED",
+  "designScaffoldLaw": {
+    "designRepo": "truth, architecture, specifications, manifests",
+    "softwareScaffoldRepo": "implementation-ready code body",
+    "factory": "MetaForge converts design truth into work order, scaffold plan, code handoff, runtime packet, audit, release and archive"
+  },
+  "owners": [
+    {
+      "capability": "Software factory / SDLC",
+      "repository": "Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+      "status": "EXISTING_CANONICAL_CONTROL_PLANE"
+    },
+    {
+      "capability": "Atlas Mind model application",
+      "repository": "Atlas-Ascend/Atlas-Mind-LLM",
+      "status": "CANONICAL_ACTIVE_SEEDED_APPLICATION_BINDINGS_EXTERNAL"
+    },
+    {
+      "capability": "Executive authorization",
+      "repository": "Atlas-Ascend/Janus-Odin",
+      "status": "CANONICAL_EXECUTIVE_OWNER; reconcile Janus-Prime lineage"
+    },
+    {
+      "capability": "SAMI administration",
+      "repository": "Atlas-Ascend/SAMI",
+      "status": "ACTIVE_SUPPORTING_RUNTIME_PROOF_REQUIRED"
+    },
+    {
+      "capability": "Workforce dispatch",
+      "repository": "Atlas-Ascend/workforce-spine",
+      "status": "CURRENT_OWNER; salvage WarMachine lineage"
+    },
+    {
+      "capability": "Packet work grammar",
+      "repository": "Atlas-Ascend/Packet-OS",
+      "status": "CURRENT_OWNER; salvage WarMachine lineage"
+    },
+    {
+      "capability": "PROMETHEUS",
+      "repository": "Atlas-Ascend/-PROMETHEUS-AIS-Competition",
+      "status": "EXECUTABLE_CANDIDATE; preserve other versions and reconcile one canonical kernel"
+    },
+    {
+      "capability": "Engineering verification",
+      "repository": "Atlas-Ascend/DEVOS",
+      "status": "CANONICAL_ACTIVE_SEEDED"
+    },
+    {
+      "capability": "Acceptance",
+      "repository": "Atlas-Ascend/SECA",
+      "status": "CANONICAL_ACTIVE_SEEDED"
+    },
+    {
+      "capability": "Thoth archive",
+      "repository": "Atlas-Ascend/thoth-archive-engine",
+      "status": "PRESERVE_SOURCE_AND_SALVAGE_DELTAS"
+    },
+    {
+      "capability": "EDEN runtime",
+      "repository": "Atlas-Ascend/Eden-2.0",
+      "status": "ROLE_SPLIT_AND_AUTHORITY_RECONCILE"
+    },
+    {
+      "capability": "Cali runtime",
+      "repository": "Atlas-Ascend/Cali-CRF",
+      "status": "ROLE_SPLIT_AND_AUTHORITY_RECONCILE"
+    },
+    {
+      "capability": "Office Fabric",
+      "repository": "Atlas-Ascend/EDEN-Resident-Office-Fabric",
+      "status": "PARTIAL_OR_UNBOUND; dispatch/runtime proof open"
+    },
+    {
+      "capability": "Operator command center",
+      "repository": "Atlas-Ascend/Ghost-Atlas-Command-Center",
+      "status": "EXISTING_CONTROL_FABRIC_CONTEXT"
+    },
+    {
+      "capability": "Next.js scaffold lineage",
+      "repository": "Atlas-Ascend/nextjs; Atlas-Ascend/nextjs-ai-chatbot; Atlas-Ascend/nextjs-boilerplate",
+      "status": "PRESERVE_AND_SALVAGE_TEMPLATE_PROVENANCE"
+    },
+    {
+      "capability": "Software design corpus",
+      "repository": null,
+      "source": "GhostAtlas Compiler Runtime Estate v2 MetaForge design corpus",
+      "status": "SOURCE_INVENTORY_LOCATED_LIVE_GIT_BINDING_UNVERIFIED"
+    },
+    {
+      "capability": "UX design",
+      "repository": null,
+      "source": "DaVinci UI System / EDEN 3.0 UX wiremap and visual system source",
+      "status": "DESIGN_ARTIFACT_LOCATED_CANONICAL_REPOSITORY_UNVERIFIED"
+    },
+    {
+      "capability": "Local Git service",
+      "repository": null,
+      "status": "NOT_DEPLOYMENT_VERIFIED; Forgejo target candidate after host census"
+    }
+  ],
+  "rules": [
+    "No new repositories in this convergence patch",
+    "No destructive repo collapse",
+    "Preserve template/source provenance",
+    "Patch canonical owners and prove bindings"
+  ]
+}
