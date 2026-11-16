@@ -12,6 +12,9 @@ This directory is the architecture and implementation-control pack for the local
 6. MVP_ORGANISM_RUNTIME_CONTRACTS_AND_PROOF.md — core organ contracts, 23-organ truth rule, lightweight MVP, proof scenario.
 7. BUILD_TRUTH_AND_RELEASE_GATES.json — machine-readable architecture status and promotion invariants.
 8. IMPLEMENTATION_ROADMAP_AND_EXIT_CRITERIA.md — staged build sequence and proof required before status promotion.
+9. SYSTEM_DEPENDENCY_AND_TOOLCHAIN_BASELINE.md — host roles, dependency matrix, GX10/Ollama bootstrap, security and verification.
+10. UX_SYSTEM_AND_OPERATOR_WORKBENCH_SPEC.md — DaVinci/EDEN UX lineage, operator information architecture, states, approvals and accessibility.
+11. C4_SYSTEM_TOPOLOGY_AND_SEQUENCE.md — context/container topology, sequence, trust boundaries and event envelope.
 
 ## Current truth
 
