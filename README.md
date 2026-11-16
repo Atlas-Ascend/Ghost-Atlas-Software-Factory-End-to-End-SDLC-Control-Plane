@@ -1,3 +1,5 @@
+> **Canonical authority notice:** This repository is a preserved source donor registered as GA-REPO-033. The canonical architecture and Build Truth authority is Atlas-Ascend/Ghost-Atlas-OS, with the target component at services/software-factory. This branch is a selective design/code donor proposal; it does not establish a second canonical root and must not be merged wholesale.
+
 # Ghost Atlas Software Factory
 
 **Technical class:** End-to-End Software Delivery Control Plane  
