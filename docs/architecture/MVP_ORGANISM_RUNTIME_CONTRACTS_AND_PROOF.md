@@ -23,39 +23,15 @@ The MVP is one reliable command-to-proof path on the existing host and repositor
 | ProofGrid | Proof bundle publication | lineage and receipts | proof ID and manifest | cannot invent evidence |
 | Thoth | Immutable archive | source/evidence references | archive ID and lineage | preserve failed attempts |
 
-## 3. Canonical 23-organ Architect's Body
+## 3. Frozen organism map and 23-capability reconciliation
 
-The canonical body is the existing 23-organ roster. This pack preserves the names and order from the Vishvarupa Technical-Stack Singularity source, subordinate to the frozen 2026-09-10 Organism Map. It does not add PROMETHEUS, Mothership, OmniMind, Hydra, BodyForge, CTHULU Omega, COSMOS, AEON, or MINDNOS as extra organs.
+The operator's target is a lightweight MVP that exposes 23 operational capabilities. The frozen 2026-09-10 Ghost Atlas / EDEN AGI Organism Map is authoritative, but the retrieved canonical excerpts do **not** define a formal roster of 23 organ IDs. The frozen map names 14 central nodes in one view — EDEN AGI, JANUS/ODIN, Atlas Mind, Universal CaseGraph, Packet OS, Workforce Spine, MetaForge, THOTH, CrownGrid, Hypernet, Medusa, SECA/DevOS, ProofGrid, and ServerForge — and also identifies Resident GARI, PROMETHEUS, the universal data/intelligence layer, VIBE/operator surfaces, infrastructure, public surfaces, and Rainbow Council/Omnitheon governance as part of the wider organism map.
 
-| # | Canonical organ | MVP routing role | Initial activation truth |
-|---:|---|---|---|
-| 1 | Atlas Mind / Vishvarupa | Conversational cognition, planning, local coding interface | ACTIVE CANDIDATE; runtime proof required |
-| 2 | ARCADIA | Creative/experience capability routed through organism contracts | NOT VERIFIED |
-| 3 | Thoth | Memory, archive, provenance and lineage | ACTIVE CANDIDATE; archive proof required |
-| 4 | Universal Atlas / SESHAT | Knowledge/ontology indexing and structured estate context | NOT VERIFIED |
-| 5 | NAVI | Cognitive governance and pattern-recognition support | SUPPORTING; verify integration |
-| 6 | Janus Prime / Odin | Executive operational command and authorization | ACTIVE CANDIDATE; authorization proof required |
-| 7 | Packet OS | Atomic work grammar, CRF packets and state transitions | ACTIVE CANDIDATE; CRF proof required |
-| 8 | MetaForge | Software design-to-build factory and packaging | ACTIVE CANDIDATE; real artifact proof required |
-| 9 | Workforce Spine | Task queue, routing, ownership, scheduling and handoff; CTHULU Omega is a bounded worker/orchestration capability under this organ | ACTIVE CANDIDATE; dispatch proof required |
-| 10 | SECA / DevOS | Independent acceptance plus engineering verification | ACTIVE CANDIDATE; real test evidence required |
-| 11 | Medusa | Security, privacy and public/private release review | ACTIVE CANDIDATE; policy proof required |
-| 12 | EDEN / Cali | Runtime body and CRF-governed execution profiles | ACTIVE CANDIDATE; host/runtime proof required |
-| 13 | CrownGrid | Estate I/O routing and service connectivity | NOT VERIFIED |
-| 14 | ServerForge | Discord/service nervous-system and communication bridge | NOT VERIFIED |
-| 15 | RoadBridge | Field capture and external-world input | NOT VERIFIED |
-| 16 | ProofGrid | Proof publication and evidence-chain closure | ACTIVE CANDIDATE; proof bundle required |
-| 17 | Audience Forge | Audience/content production and distribution capability | NOT VERIFIED |
-| 18 | GARI | Research, institute and public-accountability capability | NOT VERIFIED |
-| 19 | HYPERNET-OMEGA | Infrastructure/embodiment and networked hardware fabric | NOT VERIFIED |
-| 20 | META-FATE | Cross-system governance, boundary and routing capability | NOT VERIFIED |
-| 21 | NHCM | Neuro-holistic cognitive model/context framework | NOT VERIFIED |
-| 22 | CSA-95 | Canonical organ; exact operational charter must be bound from its source contract | NOT VERIFIED |
-| 23 | MECA | Canonical organ; exact operational charter must be bound from its source contract | NOT VERIFIED |
+Two other sources must not be silently promoted to canonical truth:
+- The Ghost-Atlas-Distributed-Agentic-Organism topology seed currently contains 16 entries.
+- VISHVARUPA-TECHNICAL-STACK-SINGULARITY.md enumerates a 23-item candidate list, but that is not proof that the frozen September 10 map defined those as 23 independent organs.
 
-**Control-plane and loop distinctions:** Mothership and OmniMind are the control plane, not additional organs. Hydra / Reverse Uno is the healing loop. PROMETHEUS is the bounded evolution, evidence and promotion loop, not a 24th organ. BodyForge is the resource governor. COSMOS, AEON and MINDNOS remain subordinate theory/runtime systems, not new independent organs. CTHULU Omega is a Workforce Spine capability, not an extra organ.
-
-The table's initial statuses are conservative routing states, not deployment claims. Each organ must be reconciled to the exact frozen manifest ID, repository owner, runtime, and current state before activation. The exact operational charters for ARCADIA, CSA-95, and MECA must be read from their canonical contracts; the table does not invent those contracts.
+Therefore the registry records a **23-capability target**, not a verified 23-organ canonical roster. Each capability must map to an existing frozen organ, control-plane surface, governance layer, rail, runtime, or campaign. Do not create or rename organs to make the count reach 23. Mothership/OmniMind control-plane status, Hydra/Reverse Uno healing loop, PROMETHEUS bounded evolution/evidence loop, BodyForge resource governor, and CTHULU Omega Workforce Spine capability must remain correctly classified rather than counted as independent organs without source authority.
 
 ## 4. Activation and proof rule
 
