@@ -67,7 +67,7 @@ A tool call contains tool name, schema-validated arguments, run/packet/correlati
 
 ## 8. Security
 
-Bind Ollama to loopback/private interface. Put authenticated gateway in front of remote inference. Separate inference identity from tool execution identity. Restrict filesystem to approved workspaces. Sanitize tool outputs and defend against prompt injection in repositories/issues/documents. Redact secrets. Enforce per-run token/time/memory/tool budgets. Log model digest, prompt template version, tool calls, decisions, and outcomes. Keep an emergency tool-execution kill switch independent of the model.
+Bind Ollama to loopback. Run GA-NIF on the same GX10 host as the authenticated private-network front door. Put authenticated gateway in front of remote inference. Separate inference identity from tool execution identity. Restrict filesystem to approved workspaces. Sanitize tool outputs and defend against prompt injection in repositories/issues/documents. Redact secrets. Enforce per-run token/time/memory/tool budgets. Log model digest, prompt template version, tool calls, decisions, and outcomes. Keep an emergency tool-execution kill switch independent of the model.
 
 ## 9. Acceptance
 
