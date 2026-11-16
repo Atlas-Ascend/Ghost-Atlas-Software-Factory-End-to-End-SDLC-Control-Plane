@@ -16,7 +16,11 @@ Do not install duplicate services. Do not add a database, queue, cache, service 
 | Operator client | Command/approval/proof surface | Browser or existing mobile/desktop client, authenticated network | Privileged execution |
 | External services | Optional mirror/failover | GitHub mirror, approved cloud model fallback | Silent data egress |
 
-## 3. Existing Software Factory dependencies
+## 3. Canonical monorepo toolchain and donor toolchain
+
+Ghost Atlas OS root toolchain baseline is Node.js 22, pnpm 10.15.1, Turborepo 2.5.6, TypeScript 5.9.2, Vitest 3.2.4, ESLint 9.35.0, Python 3.13, Ruff 0.16.6, pytest 8.4.2, and Docker/Compose as recorded in the canonical root package and scaffold. The external Software Factory donor has a separate Node.js 20+ / npm / TypeScript 5.7.2 toolchain. Do not conflate the donor lockfile with the canonical monorepo toolchain.
+
+## 4. Existing Software Factory donor dependencies
 
 The current canonical Software Factory repository declares:
 - Node.js engine requirement: version 20 or newer.
