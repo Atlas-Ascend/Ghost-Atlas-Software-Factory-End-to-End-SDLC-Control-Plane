@@ -63,7 +63,7 @@ Mothership and OmniMind coordinate the control plane. Hydra/Reverse Uno is the h
 |---|---|---|---|
 | Operator UI | Existing client / Office Fabric | Conversation, status, approvals, proof inspection | User authentication |
 | Atlas Mind API | EDEN/office host | Session, context, model router, streaming | Service identity |
-| Ollama | Dedicated GX10 | Local model inference | Private inference network |
+| Ollama | Dedicated GX10 | Local model inference | Loopback only; GA-NIF is the authenticated private ingress |
 | Inference gateway | Existing CrownGrid or approved gateway | Auth, rate limits, request policy, audit | Only Atlas Mind may call |
 | JANUS adapter | Existing Janus/Odin | Authorization receipt | Executive authority |
 | Packet OS adapter | Existing Packet OS | Packet lifecycle and state | Work-state authority |
