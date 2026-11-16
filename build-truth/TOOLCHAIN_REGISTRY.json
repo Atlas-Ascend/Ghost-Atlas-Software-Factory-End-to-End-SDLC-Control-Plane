@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "CANDIDATE_REGISTRY_HOST_VALIDATION_REQUIRED",
+  "owner": "Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+  "dependencyLaw": "Reuse canonical dependencies; pin versions and digests; no duplicate service without approved ADR.",
+  "entries": [
+    {
+      "name": "Git",
+      "category": "source-control",
+      "role": "local clone/branch/diff/commit",
+      "status": "REQUIRED",
+      "versionPolicy": "host package pin",
+      "verify": "git --version"
+    },
+    {
+      "name": "OpenSSH",
+      "category": "source-control",
+      "role": "SSH transport and key auth",
+      "status": "REQUIRED_FOR_LOCAL_GIT",
+      "versionPolicy": "host security updates",
+      "verify": "ssh -V"
+    },
+    {
+      "name": "Node.js",
+      "category": "build-runtime",
+      "role": "Software Factory runtime",
+      "status": "REQUIRED",
+      "versionPolicy": ">=20; pin exact LTS in toolchain file",
+      "verify": "node --version"
+    },
+    {
+      "name": "npm",
+      "category": "package-manager",
+      "role": "Software Factory dependencies",
+      "status": "REQUIRED",
+      "versionPolicy": "lockfile governed",
+      "verify": "npm --version"
+    },
+    {
+      "name": "TypeScript",
+      "category": "compiler",
+      "role": "existing factory compile",
+      "status": "EXISTING_PIN",
+      "version": "5.7.2",
+      "verify": "npx tsc --version"
+    },
+    {
+      "name": "@types/node",
+      "category": "type-definitions",
+      "role": "existing factory types",
+      "status": "EXISTING_PIN",
+      "version": "^22.10.0",
+      "verify": "npm ls @types/node"
+    },
+    {
+      "name": "Python 3",
+      "category": "automation",
+      "role": "existing automation scripts",
+      "status": "CONDITIONAL",
+      "versionPolicy": "pin per owning repo",
+      "verify": "python3 --version"
+    },
+    {
+      "name": "Ollama",
+      "category": "local-inference",
+      "role": "Atlas Mind model runtime on GX10",
+      "status": "TARGET_REQUIRED_NOT_DEPLOYED",
+      "versionPolicy": "pin release and binary checksum",
+      "verify": "ollama --version"
+    },
+    {
+      "name": "Forgejo",
+      "category": "local-git-service",
+      "role": "independent self-hosted Git UI/API/SSH",
+      "status": "TARGET_CANDIDATE_NOT_DEPLOYED",
+      "versionPolicy": "pin image version and digest",
+      "verify": "HTTP health + SSH clone test"
+    },
+    {
+      "name": "Docker OR Podman",
+      "category": "container-runtime",
+      "role": "isolate workers and run local Git service",
+      "status": "CONDITIONAL_CHOOSE_ONE",
+      "versionPolicy": "existing host choice; rootless preferred",
+      "verify": "docker version OR podman version"
+    },
+    {
+      "name": "SQLite",
+      "category": "database",
+      "role": "Forgejo single-node default candidate",
+      "status": "CONDITIONAL_REUSE_DEFAULT",
+      "versionPolicy": "service-managed",
+      "verify": "Forgejo database health"
+    },
+    {
+      "name": "Packet OS persistence",
+      "category": "work-ledger",
+      "role": "canonical packet state and lineage",
+      "status": "EXISTING_CANONICAL_REUSE",
+      "versionPolicy": "owning repo contract",
+      "verify": "Packet OS health/contract test"
+    },
+    {
+      "name": "Workforce Spine queue",
+      "category": "queue",
+      "role": "worker dispatch and leases",
+      "status": "EXISTING_CANONICAL_REUSE",
+      "versionPolicy": "owning repo contract",
+      "verify": "dispatch/lease/retry/cancel test"
+    },
+    {
+      "name": "Gitleaks",
+      "category": "security",
+      "role": "secret scanning",
+      "status": "CANDIDATE_REUSE_EXISTING_FIRST",
+      "versionPolicy": "pin release",
+      "verify": "gitleaks detect --source ."
+    },
+    {
+      "name": "Semgrep",
+      "category": "security",
+      "role": "SAST",
+      "status": "CANDIDATE_REUSE_EXISTING_FIRST",
+      "versionPolicy": "pin release and ruleset",
+      "verify": "semgrep --version"
+    },
+    {
+      "name": "Trivy",
+      "category": "security",
+      "role": "dependency/container scanning",
+      "status": "CANDIDATE_REUSE_EXISTING_FIRST",
+      "versionPolicy": "pin release/database snapshot",
+      "verify": "trivy --version"
+    },
+    {
+      "name": "Syft",
+      "category": "supply-chain",
+      "role": "SBOM generation",
+      "status": "CANDIDATE_REUSE_EXISTING_FIRST",
+      "versionPolicy": "pin release",
+      "verify": "syft version"
+    },
+    {
+      "name": "Playwright",
+      "category": "ux-testing",
+      "role": "browser end-to-end tests",
+      "status": "CONDITIONAL_IF_WEB_UI",
+      "versionPolicy": "lockfile pin",
+      "verify": "npx playwright --version"
+    },
+    {
+      "name": "Figma",
+      "category": "design",
+      "role": "existing design collaboration",
+      "status": "EXISTING_TOOL_REUSE",
+      "versionPolicy": "workspace-controlled",
+      "verify": "design review and export receipt"
+    },
+    {
+      "name": "OpenTelemetry",
+      "category": "observability",
+      "role": "traces/metrics/logs instrumentation",
+      "status": "CANDIDATE_REUSE_RUNTIME_OBSERVATORY",
+      "versionPolicy": "SDK and collector pin",
+      "verify": "trace propagation test"
+    },
+    {
+      "name": "PROMETHEUS AIS Competition",
+      "category": "evaluation",
+      "role": "model/task benchmark and evidence synthesis",
+      "status": "EXISTING_ORGAN_REUSE",
+      "versionPolicy": "canonical PROMETHEUS build truth",
+      "verify": "benchmark report + dataset/version"
+    }
+  ],
+  "prohibitions": [
+    "Do not add Redis/NATS/PostgreSQL unless the existing Packet OS/Workforce contract requires it and a capacity test proves need",
+    "Do not deploy both Docker and Podman",
+    "Do not create a second Ollama daemon",
+    "Do not expose Ollama unauthenticated",
+    "Do not install a second local Git service if an existing owner is found"
+  ]
+}

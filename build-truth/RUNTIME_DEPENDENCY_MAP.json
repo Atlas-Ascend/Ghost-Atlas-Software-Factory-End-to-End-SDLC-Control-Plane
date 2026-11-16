@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "status": "TARGET_TOPOLOGY_HOST_VERIFICATION_PENDING",
+  "nodes": [
+    {
+      "name": "ASUS Ascent GX10",
+      "role": "independent local inference node",
+      "architecture": "ARM64",
+      "accelerator": "NVIDIA GB10",
+      "unifiedMemoryGB": 128,
+      "storageTB": 2,
+      "selectedTarget": true,
+      "deployed": false,
+      "services": [
+        "Ollama",
+        "model store",
+        "benchmark worker"
+      ]
+    },
+    {
+      "name": "EDEN/Cali host",
+      "role": "build and execution runtime",
+      "architecture": "UNVERIFIED",
+      "deployed": "EXISTING_RUNTIME_LINEAGE; physical host placement unverified",
+      "services": [
+        "Packet OS adapter",
+        "Workforce dispatcher",
+        "MetaForge",
+        "EDEN executor",
+        "Cali adapter",
+        "DevOS",
+        "SECA",
+        "ProofGrid",
+        "Thoth"
+      ]
+    },
+    {
+      "name": "Local Git service",
+      "role": "independent source authority",
+      "service": "Forgejo candidate",
+      "deployed": false,
+      "services": [
+        "Git over SSH",
+        "web UI/API",
+        "local repositories",
+        "optional GitHub mirror"
+      ]
+    },
+    {
+      "name": "Operator device",
+      "role": "conversation and approval surface",
+      "services": [
+        "Atlas Mind UI",
+        "SAMI intake",
+        "JANUS approval",
+        "proof inspection"
+      ]
+    },
+    {
+      "name": "Cloud",
+      "role": "optional failover / external mirror",
+      "enabledByDefault": false,
+      "services": [
+        "GitHub mirror if authorized",
+        "cloud model fallback if authorized"
+      ]
+    }
+  ],
+  "networkPolicy": {
+    "ollama": "private interface behind authenticated gateway; no public listener",
+    "workers": "deny egress by default; allowlist dependencies",
+    "git": "private network; SSH key auth; public mirror opt-in",
+    "secrets": "reference-only in packets; runtime injection"
+  },
+  "persistence": {
+    "packetLedger": "existing Packet OS canonical store",
+    "repositories": "local Git service durable volume",
+    "artifacts": "content-addressed durable filesystem/object store",
+    "proof": "ProofGrid canonical evidence store",
+    "archive": "Thoth canonical archive",
+    "models": "GX10 persistent model volume"
+  },
+  "failureModes": [
+    "Ollama unavailable: pause model-dependent planning; deterministic packet operations may continue where safe",
+    "EDEN/Cali unavailable: do not dispatch runtime jobs",
+    "Worker lost: lease expiry and idempotent retry",
+    "Local Git unavailable: no source mutation; queue work until recovered",
+    "Proof or archive unavailable: block promotion"
+  ]
+}

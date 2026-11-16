@@ -1,3 +1,5 @@
+> **Canonical authority notice:** This repository is a preserved source donor registered as GA-REPO-033. The canonical architecture and Build Truth authority is Atlas-Ascend/Ghost-Atlas-OS, with the target component at services/software-factory. This branch is a selective design/code donor proposal; it does not establish a second canonical root and must not be merged wholesale.
+
 # Ghost Atlas Software Factory
 
 **Technical class:** End-to-End Software Delivery Control Plane  
@@ -50,7 +52,7 @@ PROMOTE
 
 ## Runnable vertical slice
 
-The current v1 executes the entire control-plane sequence in-process while preserving production-grade boundaries through typed contracts and Estate Event lineage. Resident services can later replace stage implementations without changing those contracts.
+The current v1 is an in-process control-plane simulation. It preserves typed contracts and Estate Event lineage but does not yet create source files, produce a real package, or execute an EDEN/Cali process. The simulation is explicitly marked SIMULATED and DevOS blocks acceptance and promotion. This is intentional: a synthetic packet digest must never be presented as a real software build.
 
 ```bash
 npm install
@@ -58,7 +60,7 @@ npm run check
 npm run demo -- "Build a flashlight application"
 ```
 
-The demo returns a run ID, correlation ID, artifact ID, ProofGrid proof ID, Thoth archive ID, promotion state, and the ordered stage trace.
+The demo returns a run ID, correlation ID, simulated artifact ID, ProofGrid proof ID, Thoth archive ID, blocked promotion state, and the ordered stage trace. A non-zero exit is expected because the simulation is not eligible for canonical promotion.
 
 ## Repository map
 
@@ -110,7 +112,7 @@ The same contracts are intended to back the production topology already being bu
 
 `SOFTWARE_FACTORY_V1 = IMPLEMENTED_ON_FEATURE_BRANCH`
 
-Promotion to `main` requires CI build/test/smoke proof.
+Promotion to `main` requires CI build/test/fail-closed smoke proof and a separate review of the architecture and safety changes.
 
 
 ## Governed one-stop SDLC compiler

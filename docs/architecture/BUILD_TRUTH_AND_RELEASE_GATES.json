@@ -1,0 +1,448 @@
+{
+  "schemaVersion": "1.0.0",
+  "product": "EDEN Local Coding Organism",
+  "canonicalOwner": "Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+  "mode": "CONVERGENCE_ONLY",
+  "status": "ARCHITECTURE_DEFINED_IMPLEMENTATION_NOT_YET_VERIFIED",
+  "baseline": {
+    "softwareFactory": "existing canonical control plane",
+    "runtimes": [
+      "EDEN",
+      "Cali-CRF"
+    ],
+    "modelRuntime": "Ollama target; installation/model digest unverified",
+    "cognitiveLayer": [
+      "Atlas Mind",
+      "NHCM",
+      "OmniMind"
+    ],
+    "sourceControl": "existing local Git owner to be verified; GitHub optional mirror"
+  },
+  "commandToProofSpine": [
+    "ATLAS_MIND",
+    "SAMI",
+    "JANUS_PRIME",
+    "PACKET_OS_CRF",
+    "WORKFORCE_SPINE_CTHULHU_OMEGA",
+    "METAFORGE",
+    "EDEN_OR_CALI",
+    "DEVOS",
+    "PROMETHEUS_AIS_COMPETITION",
+    "SECA",
+    "MEDUSA",
+    "PROOFGRID",
+    "THOTH",
+    "PROMOTION_GATE"
+  ],
+  "truthAuthorities": {
+    "engineering": "DEVOS",
+    "evidence": "PROMETHEUS",
+    "acceptance": "SECA",
+    "releaseBoundary": "MEDUSA",
+    "proofPublication": "PROOFGRID",
+    "historicalLineage": "THOTH",
+    "authorization": "JANUS_PRIME",
+    "workState": "PACKET_OS_CRF",
+    "execution": "EDEN_AND_CALI"
+  },
+  "invariants": [
+    "No stage self-promotes",
+    "Model output is untrusted until schema and policy validation",
+    "No execution without an authorized Packet OS packet",
+    "No promotion without DevOS, PROMETHEUS, SECA, Medusa, ProofGrid, and Thoth receipts",
+    "Missing evidence blocks promotion",
+    "Every run preserves runId and correlationId",
+    "All generated changes are reviewable as diffs",
+    "Local-only mode forbids unapproved egress",
+    "No new organ or repository without an approved architecture decision",
+    "23-organ names must match the frozen 2026-09-10 manifest exactly"
+  ],
+  "lifecycle": [
+    "INTAKE",
+    "FORENSIC_DISCOVERY",
+    "CANONICALIZATION",
+    "REQUIREMENTS_LOCK",
+    "DESIGN_LOCK",
+    "IMPLEMENTATION_READY",
+    "BUILDING",
+    "INTEGRATING",
+    "VERIFYING",
+    "SECURITY_REVIEW",
+    "RELEASE_READY",
+    "DEPLOYING",
+    "RUNTIME_VERIFICATION",
+    "PROOF_GENERATION",
+    "DOCUMENTING",
+    "ARCHIVED"
+  ],
+  "releaseGate": {
+    "required": [
+      "JANUS_APPROVAL",
+      "PACKET_VALID",
+      "DEVOS_PASS",
+      "PROMETHEUS_REPORT",
+      "SECA_PASS",
+      "MEDUSA_ALLOW",
+      "PROOFGRID_BUNDLE",
+      "THOTH_ARCHIVE",
+      "RUNTIME_HEALTH"
+    ],
+    "failClosed": true
+  },
+  "repositoryPolicy": {
+    "createNewRepositories": false,
+    "preferredAction": "patch_existing_canonical_owner",
+    "branch": "architecture/eden-local-coding-organism-mvp",
+    "designAndUXOwners": "reconcile against frozen estate census before creating repositories"
+  },
+  "deploymentFacts": {
+    "ollamaInstalled": false,
+    "localModelPinned": false,
+    "localGitNodeDeployed": false,
+    "all23OrgansActive": false,
+    "endToEndMvpVerified": false
+  },
+  "nextProofRequired": [
+    "Inspect EDEN/Cali host OS, CPU, RAM, GPU, disk, network",
+    "Inspect local Git service owner and deployment",
+    "Inspect Atlas Mind/NHCM/OmniMind actual model and tool contracts",
+    "Pin Ollama model by digest after PROMETHEUS evaluation",
+    "Implement local tool gateway and Packet OS adapter",
+    "Run end-to-end MVP proof scenario",
+    "Reconcile the exact 23-organ names and IDs against the frozen 2026-09-10 manifest and source contracts",
+    "Verify each organ repository owner, runtime placement, and ACTIVE/PAUSED/ARCHIVED/EXPERIMENTAL state",
+    "Close Architecture A documentation and validation; preserve a clean handoff to the separate Architecture B Vishvarupa Phone Sovereign Supreme mission.",
+    "Reconcile the 23-capability target against the frozen 2026-09-10 map; classify each as organ, control-plane surface, rail, governance layer, runtime, or campaign without creating new organs"
+  ],
+  "organManifestSource": "VISHVARUPA-TECHNICAL-STACK-SINGULARITY.md is a 23-item candidate list only; frozen 2026-09-10 Organism Map remains authoritative and retrieved excerpts do not provide 23 formal organ IDs.",
+  "organManifest": [
+    {
+      "ordinal": 1,
+      "canonicalName": "Atlas Mind / Vishvarupa",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 2,
+      "canonicalName": "ARCADIA",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 3,
+      "canonicalName": "Thoth",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 4,
+      "canonicalName": "Universal Atlas / SESHAT",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 5,
+      "canonicalName": "NAVI",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 6,
+      "canonicalName": "Janus Prime / Odin",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 7,
+      "canonicalName": "Packet OS",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 8,
+      "canonicalName": "MetaForge",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 9,
+      "canonicalName": "Workforce Spine",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 10,
+      "canonicalName": "SECA / DevOS",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 11,
+      "canonicalName": "Medusa",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 12,
+      "canonicalName": "EDEN / Cali",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 13,
+      "canonicalName": "CrownGrid",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 14,
+      "canonicalName": "ServerForge",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 15,
+      "canonicalName": "RoadBridge",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 16,
+      "canonicalName": "ProofGrid",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 17,
+      "canonicalName": "Audience Forge",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 18,
+      "canonicalName": "GARI",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 19,
+      "canonicalName": "HYPERNET-OMEGA",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 20,
+      "canonicalName": "META-FATE",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 21,
+      "canonicalName": "NHCM",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 22,
+      "canonicalName": "CSA-95",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    },
+    {
+      "ordinal": 23,
+      "canonicalName": "MECA",
+      "activationStatus": "NOT_VERIFIED",
+      "proofRequired": true,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
+    }
+  ],
+  "controlPlaneAndLoops": {
+    "controlPlane": [
+      "Mothership",
+      "OmniMind"
+    ],
+    "healingLoop": [
+      "Hydra",
+      "Reverse Uno"
+    ],
+    "evolutionEvidencePromotionLoop": [
+      "PROMETHEUS"
+    ],
+    "resourceGovernor": [
+      "BodyForge"
+    ],
+    "subordinateTheoryRuntimeSystems": [
+      "COSMOS",
+      "AEON",
+      "MINDNOS"
+    ],
+    "workforceCapability": [
+      "CTHULU Omega"
+    ]
+  },
+  "repositoryOwnerMap": {
+    "softwareFactory": {
+      "repository": "Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+      "state": "EXISTING_CANONICAL_CONTROL_PLANE"
+    },
+    "softwareDesign": {
+      "source": "GhostAtlas Compiler Runtime Estate v2 MetaForge design corpus",
+      "state": "SOURCE_ARTIFACT_LOCATED_LIVE_GIT_BINDING_UNVERIFIED"
+    },
+    "softwareScaffold": {
+      "candidates": [
+        "Atlas-Ascend/nextjs",
+        "Atlas-Ascend/nextjs-ai-chatbot",
+        "Atlas-Ascend/nextjs-boilerplate"
+      ],
+      "state": "PRESERVE_AND_SALVAGE_LINEAGE_NO_REPLACEMENT"
+    },
+    "uxDesign": {
+      "reference": "DaVinci UI System / EDEN 3.0 UX specifications",
+      "state": "DESIGN_ARTIFACT_LOCATED_CANONICAL_REPOSITORY_UNVERIFIED"
+    },
+    "uxScaffold": {
+      "candidates": [
+        "Atlas-Ascend/Ghost-Atlas-Command-Center",
+        "Atlas-Ascend/EDEN-Resident-Office-Fabric",
+        "Atlas-Ascend/nextjs-ai-chatbot"
+      ],
+      "state": "BOUNDED_CONTEXTS_RUNTIME_AND_BINDING_PROOF_PENDING"
+    },
+    "toolchainRegistry": {
+      "owner": "Ghost Atlas Software Factory + MetaForge toolkit ecosystem",
+      "state": "EXTEND_EXISTING_BUILD_TRUTH"
+    },
+    "localGit": {
+      "state": "DEPLOYMENT_NOT_VERIFIED",
+      "decision": "inspect existing host and RepoForge/ServerForge/DevOS owner before selecting one service"
+    }
+  },
+  "inferenceNode": {
+    "selectedTarget": "ASUS Ascent GX10",
+    "accelerator": "NVIDIA GB10 Grace Blackwell",
+    "unifiedMemoryGB": 128,
+    "selectedStorageTB": 2,
+    "selectionStatus": "USER_SELECTED_TARGET_NOT_DEPLOYMENT_VERIFIED",
+    "ollamaArchitecture": "Linux ARM64",
+    "localInferenceOnlyByDefault": true,
+    "candidates": [
+      {
+        "model": "qwen3-coder:30b",
+        "role": "primary coding candidate for PROMETHEUS benchmark",
+        "status": "CANDIDATE_NOT_PINNED"
+      },
+      {
+        "model": "devstral:24b",
+        "role": "coding-agent comparison candidate",
+        "status": "CANDIDATE_NOT_PINNED"
+      },
+      {
+        "model": "qwen3.8:27b",
+        "role": "general reasoning and coding comparison candidate",
+        "status": "CANDIDATE_NOT_PINNED"
+      },
+      {
+        "model": "ripple-preview:65b",
+        "role": "larger long-horizon coding comparison candidate",
+        "status": "CANDIDATE_NOT_PINNED"
+      }
+    ],
+    "modelSelectionAuthority": "PROMETHEUS benchmark with Architect approval",
+    "networkBoundary": "private interface behind authenticated gateway; Ollama API not exposed publicly"
+  },
+  "localGitTarget": {
+    "service": "Forgejo",
+    "status": "TARGET_CANDIDATE_NOT_DEPLOYED",
+    "rule": "reuse existing canonical local Git service if discovered; otherwise deploy one Forgejo instance"
+  },
+  "productLineage": {
+    "architectureA": {
+      "name": "Vishvarupa Phone",
+      "purpose": "The current architecture mission: define the phone-oriented Vishvarupa architecture, SDLC, organism topology, contracts, and build truth in the current architecture workstream.",
+      "phase": "CURRENT_MISSION",
+      "repository": "Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+      "status": "ARCHITECTURE_DOCUMENTATION_IN_PROGRESS",
+      "mayReferenceExistingEstate": "Yes, as architectural provenance and design lineage",
+      "mayClaimIndependentPhoneDeployment": "No"
+    },
+    "architectureB": {
+      "name": "Vishvarupa Phone Sovereign Supreme",
+      "purpose": "The subsequent sovereign phone-native software factory: one new monorepo physically hosted in Android internal shared storage, built and operated locally through Termux scripts, independent of GitHub, cloud services, EDEN, Cali, and the connected estate at runtime.",
+      "phase": "NEXT_MISSION_NOT_STARTED",
+      "repository": "New monorepo to be created in Android internal storage in the next phase; do not create it during the current mission",
+      "executionHost": "Android phone via Termux",
+      "sourceAuthority": "Local Git repository in Android internal storage",
+      "inference": "Local Ollama/model runtime only after phone hardware and Android constraints are benchmarked; no external model/cloud dependency",
+      "firstUseCase": "MetaForge generates scripts; operator feeds approved scripts into Termux; local command-to-proof build creates installable software packages; export completed artifacts and keep the phone workspace clean",
+      "independenceConstraints": [
+        "No GitHub dependency",
+        "No cloud dependency",
+        "No EDEN runtime dependency",
+        "No Cali runtime dependency",
+        "No remote workforce dependency",
+        "No network requirement for core build/test/package loop"
+      ],
+      "status": "SPECIFIED_BY_ARCHITECT; NOT_YET_DESIGNED_OR_BUILT"
+    },
+    "boundaryRules": [
+      "Do not merge Architecture A and Architecture B into one deployment or one repository.",
+      "Architecture A may document Architecture B as a future separate product line, but must not claim its local monorepo exists.",
+      "Architecture B will receive a new monorepo only when the next mission begins.",
+      "Existing estate names may be used as provenance or translated into standalone local components, but runtime dependencies are forbidden in Architecture B unless the Architect explicitly changes the independence contract.",
+      "The current mission continues on Architecture A until its deliverables and proof are complete."
+    ]
+  },
+  "organManifestStatus": "PROVISIONAL_23_CAPABILITY_TARGET_NOT_VERIFIED_23_ORGAN_CANONICAL_ROSTER",
+  "frozenMapEvidence": {
+    "namedCentralNodes": [
+      "EDEN AGI / Emerald Tablet OS",
+      "Architect / Sovereign Operator",
+      "JANUS / ODIN",
+      "Atlas Mind",
+      "Universal CaseGraph",
+      "Packet OS",
+      "Workforce Spine",
+      "Resident GARI",
+      "PROMETHEUS",
+      "THOTH",
+      "MetaForge",
+      "HYPERNET",
+      "CrownGrid",
+      "SECA / DevOS",
+      "Medusa",
+      "ProofGrid",
+      "ServerForge"
+    ],
+    "supportingLayers": [
+      "Universal data/intelligence layer",
+      "VIBE / operator surfaces",
+      "Infrastructure",
+      "Public surfaces",
+      "Rainbow Council / Omnitheon governance"
+    ],
+    "formal23OrganIdRosterPresent": false
+  }
+}

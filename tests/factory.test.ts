@@ -11,14 +11,19 @@ const intent = {
   definitionOfDone: ['build', 'execute', 'verify', 'prove', 'accept', 'secure', 'archive'],
 };
 
-test('full factory promotes only after command-to-proof completes', () => {
+test('simulation vertical slice preserves lineage but cannot claim software completion', () => {
   const result = runSoftwareFactory(intent);
-  assert.equal(result.execution.status, 'SUCCEEDED');
-  assert.equal(result.devos.testsPassed, true);
-  assert.equal(result.prometheus.contradictions.length, 0);
-  assert.equal(result.seca.decision, 'PASS');
-  assert.equal(result.medusa.allowed, true);
-  assert.equal(result.promotion.promoted, true);
+  assert.equal(result.artifact.provenance, 'SIMULATED');
+  assert.equal(result.execution.mode, 'SIMULATED');
+  assert.equal(result.devos.testsPassed, false);
+  assert.equal(result.devos.buildPassed, false);
+  assert.equal(result.devos.integrationPassed, false);
+  assert.equal(result.seca.decision, 'FAIL');
+  assert.equal(result.medusa.allowed, false);
+  assert.equal(result.promotion.promoted, false);
+  assert.ok(result.devos.findings.some((finding) => finding.includes('simulated')));
+  assert.ok(result.proofgrid.proofId);
+  assert.ok(result.thoth.archiveId);
 
   const stages = result.events.map((entry) => entry.stage);
   assert.deepEqual(stages, [

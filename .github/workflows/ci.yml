@@ -27,5 +27,18 @@ jobs:
       - name: Build and test
         run: npm run check
 
-      - name: Command-to-proof smoke test
-        run: npm run demo -- "CI smoke-test artifact"
+      - name: Command-to-proof fail-closed simulation test
+        shell: bash
+        run: |
+          set +e
+          npm run demo -- "CI simulation must not promote" > /tmp/software-factory-demo.json 2>&1
+          demo_status=$?
+          set -e
+          cat /tmp/software-factory-demo.json
+          if [ "$demo_status" -eq 0 ]; then
+            echo "ERROR: simulated execution unexpectedly exited successfully"
+            exit 1
+          fi
+          grep -q '"promoted": false' /tmp/software-factory-demo.json
+          grep -q 'artifact.promotion-blocked' /tmp/software-factory-demo.json
+          echo "PASS: simulated artifact was archived for inspection and blocked from canonical promotion"
