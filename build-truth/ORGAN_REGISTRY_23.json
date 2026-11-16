@@ -1,7 +1,6 @@
 {
   "schemaVersion": "1.0.0",
   "authority": "Frozen 2026-09-10 Ghost Atlas / EDEN AGI Organism Map",
-  "organCount": 23,
   "organs": [
     {
       "ordinal": 1,
@@ -312,5 +311,7 @@
       "Rainbow Council / Omnitheon governance"
     ],
     "formal23OrganIds": false
-  }
+  },
+  "provisionalCandidateCount": 23,
+  "policy": "Candidate list only. Do not assign canonical organ IDs, mark ACTIVE, or claim all 23 are running until reconciled against the frozen 2026-09-10 Organism Map."
 }
