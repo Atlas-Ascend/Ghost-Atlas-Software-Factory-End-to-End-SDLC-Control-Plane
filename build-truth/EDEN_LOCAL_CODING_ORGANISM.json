@@ -1,0 +1,300 @@
+{
+  "schemaVersion": "1.0.0",
+  "product": "EDEN Local Coding Organism",
+  "canonicalOwner": "Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+  "mode": "CONVERGENCE_ONLY",
+  "status": "ARCHITECTURE_DEFINED_IMPLEMENTATION_NOT_YET_VERIFIED",
+  "organManifest": [
+    {
+      "ordinal": 1,
+      "canonicalName": "Atlas Mind / Vishvarupa",
+      "mission": "Conversational cognition, planning, coding interface",
+      "repositoryOwner": "Atlas-Mind-LLM",
+      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 2,
+      "canonicalName": "ARCADIA",
+      "mission": "Creative and experience capability",
+      "repositoryOwner": "UNRESOLVED_CANONICAL_OWNER",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 3,
+      "canonicalName": "Thoth",
+      "mission": "Memory, archive, provenance and lineage",
+      "repositoryOwner": "thoth-archive-engine",
+      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 4,
+      "canonicalName": "Universal Atlas / SESHAT",
+      "mission": "Knowledge and ontology indexing",
+      "repositoryOwner": "UNRESOLVED_CANONICAL_OWNER",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 5,
+      "canonicalName": "NAVI",
+      "mission": "Cognitive governance and pattern recognition support",
+      "repositoryOwner": "Navi-3.3---Governance-Cognitive-Pattern-Recognition",
+      "activationStatus": "SUPPORTING_VERIFY_INTEGRATION",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 6,
+      "canonicalName": "Janus Prime / Odin",
+      "mission": "Executive command and authorization",
+      "repositoryOwner": "Janus-Odin",
+      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 7,
+      "canonicalName": "Packet OS",
+      "mission": "Atomic work grammar and CRF lifecycle",
+      "repositoryOwner": "Packet-OS",
+      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 8,
+      "canonicalName": "MetaForge",
+      "mission": "Software design-to-build and packaging",
+      "repositoryOwner": "Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 9,
+      "canonicalName": "Workforce Spine",
+      "mission": "Task routing, queues, ownership and CTHULU Omega worker capability",
+      "repositoryOwner": "workforce-spine",
+      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 10,
+      "canonicalName": "SECA / DevOS",
+      "mission": "Independent acceptance and engineering verification",
+      "repositoryOwner": "SECA; DEVOS",
+      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 11,
+      "canonicalName": "Medusa",
+      "mission": "Security, privacy and release boundary",
+      "repositoryOwner": "Medusa-Sovereign-Security",
+      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 12,
+      "canonicalName": "EDEN / Cali",
+      "mission": "Runtime body and CRF execution profiles",
+      "repositoryOwner": "Eden-2.0; Cali-CRF",
+      "activationStatus": "ROLE_SPLIT_RUNTIME_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 13,
+      "canonicalName": "CrownGrid",
+      "mission": "Estate I/O routing and service connectivity",
+      "repositoryOwner": "Crowngrid",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 14,
+      "canonicalName": "ServerForge",
+      "mission": "Communication and service nervous-system",
+      "repositoryOwner": "UNRESOLVED_CANONICAL_OWNER",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 15,
+      "canonicalName": "RoadBridge",
+      "mission": "Field capture and external-world input",
+      "repositoryOwner": "walking-machine-control-plane",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 16,
+      "canonicalName": "ProofGrid",
+      "mission": "Evidence publication and proof-chain closure",
+      "repositoryOwner": "Ghost-Atlas-Map-of-Reality; existing ProofGrid owner",
+      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 17,
+      "canonicalName": "Audience Forge",
+      "mission": "Audience and content production/distribution",
+      "repositoryOwner": "UNRESOLVED_CANONICAL_OWNER",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 18,
+      "canonicalName": "GARI",
+      "mission": "Research/institute and public-accountability capability",
+      "repositoryOwner": "Ghost-Atlas-Research-Institute; GARI-",
+      "activationStatus": "SUPPORTING_PROOF_REQUIRED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 19,
+      "canonicalName": "HYPERNET-OMEGA",
+      "mission": "Infrastructure, network and hardware fabric",
+      "repositoryOwner": "Hypernet-GMII-Unified-Operating-Model; VISHVARUPA repos",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 20,
+      "canonicalName": "META-FATE",
+      "mission": "Cross-system governance and boundary resolution",
+      "repositoryOwner": "UNRESOLVED_CANONICAL_OWNER",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 21,
+      "canonicalName": "NHCM",
+      "mission": "Neuro-holistic cognitive model/context framework",
+      "repositoryOwner": "UNRESOLVED_CANONICAL_OWNER",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 22,
+      "canonicalName": "CSA-95",
+      "mission": "Canonical organ; operational charter must be read from source contract",
+      "repositoryOwner": "UNRESOLVED_CANONICAL_OWNER",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    },
+    {
+      "ordinal": 23,
+      "canonicalName": "MECA",
+      "mission": "Canonical organ; operational charter must be read from source contract",
+      "repositoryOwner": "UNRESOLVED_CANONICAL_OWNER",
+      "activationStatus": "NOT_VERIFIED",
+      "healthCheck": "PENDING",
+      "contractTests": "PENDING",
+      "endToEndProof": "PENDING",
+      "lastVerifiedCommit": null
+    }
+  ],
+  "controlPlane": {
+    "Mothership": "control plane",
+    "OmniMind": "control plane",
+    "Hydra": "healing loop",
+    "ReverseUno": "healing loop",
+    "PROMETHEUS": "bounded evolution/evidence/promotion loop",
+    "BodyForge": "resource governor",
+    "CTHULU_Omega": "Workforce Spine bounded worker orchestration"
+  },
+  "commandToProof": [
+    "Atlas Mind",
+    "SAMI",
+    "JANUS PRIME",
+    "Packet OS CRF",
+    "Workforce Spine / CTHULU Omega",
+    "MetaForge",
+    "EDEN/Cali",
+    "DevOS",
+    "PROMETHEUS",
+    "SECA",
+    "Medusa",
+    "ProofGrid",
+    "Thoth",
+    "Promotion Gate"
+  ],
+  "invariants": [
+    "model does not authorize itself",
+    "no execution without valid packet",
+    "no promotion without all mandatory evidence",
+    "all 23 organ names match canonical body",
+    "no replacement repos or runtimes"
+  ],
+  "deploymentFacts": {
+    "OllamaInstalled": false,
+    "LocalGitDeployed": false,
+    "All23Active": false,
+    "EndToEndProof": false
+  }
+}
