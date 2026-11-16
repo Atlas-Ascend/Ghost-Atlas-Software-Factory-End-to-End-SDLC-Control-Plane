@@ -110,8 +110,21 @@ Official Linux installer:
 
     curl -fsSL https://ollama.com/install.sh | sh
 
+Then create a durable model directory and set the Ollama service to remain loopback-bound. The GA-NIF ingress should run beside Ollama on the GX10 and expose the only authenticated private-network endpoint to the EDEN/Atlas Mind host.
+
+    sudo install -d -o ollama -g ollama -m 0750 /srv/ollama/models
+    sudo systemctl edit ollama
+
+Use this systemd override (adjust only the storage path after confirming the mounted volume):
+
+    [Service]
+    Environment=OLLAMA_HOST=127.0.0.1:11434
+    Environment=OLLAMA_MODELS=/srv/ollama/models
+
 Then:
 
+    sudo systemctl daemon-reload
+    sudo systemctl restart ollama
     sudo systemctl status ollama --no-pager
     ollama --version
     curl --fail --silent http://127.0.0.1:11434/api/tags
