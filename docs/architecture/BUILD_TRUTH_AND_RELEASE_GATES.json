@@ -276,5 +276,43 @@
     "workforceCapability": [
       "CTHULU Omega"
     ]
+  },
+  "repositoryOwnerMap": {
+    "softwareFactory": {
+      "repository": "Atlas-Ascend/Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
+      "state": "EXISTING_CANONICAL_CONTROL_PLANE"
+    },
+    "softwareDesign": {
+      "source": "GhostAtlas Compiler Runtime Estate v2 MetaForge design corpus",
+      "state": "SOURCE_ARTIFACT_LOCATED_LIVE_GIT_BINDING_UNVERIFIED"
+    },
+    "softwareScaffold": {
+      "candidates": [
+        "Atlas-Ascend/nextjs",
+        "Atlas-Ascend/nextjs-ai-chatbot",
+        "Atlas-Ascend/nextjs-boilerplate"
+      ],
+      "state": "PRESERVE_AND_SALVAGE_LINEAGE_NO_REPLACEMENT"
+    },
+    "uxDesign": {
+      "reference": "DaVinci UI System / EDEN 3.0 UX specifications",
+      "state": "DESIGN_ARTIFACT_LOCATED_CANONICAL_REPOSITORY_UNVERIFIED"
+    },
+    "uxScaffold": {
+      "candidates": [
+        "Atlas-Ascend/Ghost-Atlas-Command-Center",
+        "Atlas-Ascend/EDEN-Resident-Office-Fabric",
+        "Atlas-Ascend/nextjs-ai-chatbot"
+      ],
+      "state": "BOUNDED_CONTEXTS_RUNTIME_AND_BINDING_PROOF_PENDING"
+    },
+    "toolchainRegistry": {
+      "owner": "Ghost Atlas Software Factory + MetaForge toolkit ecosystem",
+      "state": "EXTEND_EXISTING_BUILD_TRUTH"
+    },
+    "localGit": {
+      "state": "DEPLOYMENT_NOT_VERIFIED",
+      "decision": "inspect existing host and RepoForge/ServerForge/DevOS owner before selecting one service"
+    }
   }
 }
