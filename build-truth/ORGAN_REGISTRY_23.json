@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "authority": "Frozen 2026-09-10 Ghost Atlas / EDEN AGI Organism Map; source corroboration VISHVARUPA Technical-Stack Singularity",
+  "authority": "Frozen 2026-09-10 Ghost Atlas / EDEN AGI Organism Map",
   "organCount": 23,
   "organs": [
     {
@@ -8,11 +8,12 @@
       "canonicalName": "Atlas Mind / Vishvarupa",
       "mission": "Conversational cognition, planning, coding interface",
       "repositoryOwner": "Atlas-Mind-LLM",
-      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 2,
@@ -23,18 +24,20 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 3,
       "canonicalName": "Thoth",
       "mission": "Memory, archive, provenance and lineage",
       "repositoryOwner": "thoth-archive-engine",
-      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 4,
@@ -45,95 +48,104 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 5,
       "canonicalName": "NAVI",
       "mission": "Cognitive governance and pattern recognition support",
       "repositoryOwner": "Navi-3.3---Governance-Cognitive-Pattern-Recognition",
-      "activationStatus": "SUPPORTING_VERIFY_INTEGRATION",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 6,
       "canonicalName": "Janus Prime / Odin",
       "mission": "Executive command and authorization",
       "repositoryOwner": "Janus-Odin",
-      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 7,
       "canonicalName": "Packet OS",
       "mission": "Atomic work grammar and CRF lifecycle",
       "repositoryOwner": "Packet-OS",
-      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 8,
       "canonicalName": "MetaForge",
       "mission": "Software design-to-build and packaging",
       "repositoryOwner": "Ghost-Atlas-Software-Factory-End-to-End-SDLC-Control-Plane",
-      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 9,
       "canonicalName": "Workforce Spine",
       "mission": "Task routing, queues, ownership and CTHULU Omega worker capability",
       "repositoryOwner": "workforce-spine",
-      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 10,
       "canonicalName": "SECA / DevOS",
       "mission": "Independent acceptance and engineering verification",
       "repositoryOwner": "SECA; DEVOS",
-      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 11,
       "canonicalName": "Medusa",
       "mission": "Security, privacy and release boundary",
       "repositoryOwner": "Medusa-Sovereign-Security",
-      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 12,
       "canonicalName": "EDEN / Cali",
       "mission": "Runtime body and CRF execution profiles",
       "repositoryOwner": "Eden-2.0; Cali-CRF",
-      "activationStatus": "ROLE_SPLIT_RUNTIME_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 13,
@@ -144,7 +156,8 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 14,
@@ -155,7 +168,8 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 15,
@@ -166,18 +180,20 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 16,
       "canonicalName": "ProofGrid",
       "mission": "Evidence publication and proof-chain closure",
       "repositoryOwner": "Ghost-Atlas-Map-of-Reality; existing ProofGrid owner",
-      "activationStatus": "ACTIVE_CANDIDATE_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 17,
@@ -188,18 +204,20 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 18,
       "canonicalName": "GARI",
       "mission": "Research/institute and public-accountability capability",
       "repositoryOwner": "Ghost-Atlas-Research-Institute; GARI-",
-      "activationStatus": "SUPPORTING_PROOF_REQUIRED",
+      "activationStatus": "NOT_VERIFIED",
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 19,
@@ -210,7 +228,8 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 20,
@@ -221,7 +240,8 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 21,
@@ -232,7 +252,8 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 22,
@@ -243,7 +264,8 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     },
     {
       "ordinal": 23,
@@ -254,7 +276,41 @@
       "healthCheck": "PENDING",
       "contractTests": "PENDING",
       "endToEndProof": "PENDING",
-      "lastVerifiedCommit": null
+      "lastVerifiedCommit": null,
+      "canonicality": "PROVISIONAL_CANDIDATE_NOT_FROZEN_MAP_AUTHORITY"
     }
-  ]
+  ],
+  "status": "PROVISIONAL_23_CAPABILITY_CANDIDATE_LIST_NOT_CANONICAL_ORGAN_ROSTER",
+  "frozenMapDirectlyReconciled": false,
+  "frozenMapEvidence": {
+    "centralNodes": [
+      "EDEN AGI",
+      "JANUS / ODIN",
+      "Atlas Mind",
+      "Universal CaseGraph",
+      "Packet OS",
+      "Workforce Spine",
+      "MetaForge",
+      "THOTH",
+      "CrownGrid",
+      "HYPERNET",
+      "Medusa",
+      "SECA / DevOS",
+      "ProofGrid",
+      "ServerForge"
+    ],
+    "broaderSystems": [
+      "Architect / Sovereign Operator",
+      "Resident GARI",
+      "PROMETHEUS"
+    ],
+    "supportingLayers": [
+      "Universal data/intelligence layer",
+      "VIBE / operator surfaces",
+      "Infrastructure",
+      "Public surfaces",
+      "Rainbow Council / Omnitheon governance"
+    ],
+    "formal23OrganIds": false
+  }
 }
